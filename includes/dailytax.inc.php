@@ -2,11 +2,15 @@
 
 require_once 'dbh.inc.php';
 
-
 $sql = "UPDATE users SET usersMoney=usersMoney+(usersTaxes*0.001*usersPopulation/5)+usersHappiness;";
-$sqlFood = "UPDATE production, buildings SET production.productionFood=(SELECT buildingsFarm FROM buildings WHERE buildingsUser='Bennie')*5 WHERE production.productionUser='Bennie'";
-$sqlCoal = "UPDATE production, buildings SET production.productionFood=(SELECT buildingsCoalmine FROM buildings WHERE buildingsUser='Bennie')*5 WHERE production.productionUser='Bennie'";
-$sqlIron = "UPDATE production, buildings SET production.productionFood=(SELECT buildingsIronmine FROM buildings WHERE buildingsUser='Bennie')*5 WHERE production.productionUser='Bennie'";
+
+$sqlFood = "UPDATE production, buildings SET production.productionFood=(buildings.buildingsFarm)*5 WHERE buildings.buildingsUser = production.productionUser";
+$sqlCoal = "UPDATE production, buildings SET production.productionCoal=(buildings.buildingsCoalmine)*5 WHERE buildings.buildingsUser = production.productionUser";
+$sqlIron = "UPDATE production, buildings SET production.productionIron=(buildings.buildingsIronmine)*5 WHERE buildings.buildingsUser = production.productionUser";
+
+$sqlSetFood = "UPDATE production, items SET items.itemsFood=items.itemsFood + production.productionFood WHERE items.itemsUser = production.productionUser";
+$sqlSetCoal = "UPDATE production, items SET items.itemsCoal=items.itemsCoal + production.productionCoal WHERE items.itemsUser = production.productionUser";
+$sqlSetIron = "UPDATE production, items SET items.itemsIron=items.itemsIron + production.productionIron WHERE items.itemsUser = production.productionUser";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -33,6 +37,24 @@ if (mysqli_query($conn, $sqlCoal)) {
 }
 
 if (mysqli_query($conn, $sqlIron)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetFood)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetCoal)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetIron)) {
     echo 'worked';
 }  else {
     echo 'not working';

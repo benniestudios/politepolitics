@@ -4,7 +4,7 @@ require_once 'dbh.inc.php';
 
 date_default_timezone_set('UTC');
 $time = date('H:i');
-$sql = "UPDATE users SET usersExactTime='$time', usersTotalScore=usersMoney+usersPopulation*2+usersHappiness";
+$sql = "UPDATE users SET usersExactTime='$time', usersTotalScore=usersMoney/1000+usersPopulation*2+usersHappiness";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
