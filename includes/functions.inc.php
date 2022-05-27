@@ -203,10 +203,81 @@ function moremoney($conn, $userid) {
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("isi", $numberzero, $time, $userid);
     $stmt->execute();
-
     header("location: ../user/index.php?error=worked");
+    exit();
+}
 
+function buildCapitalFarm($conn, $build, $username) {
+    $sql = "UPDATE buildings, production, users SET buildingsFarm=buildingsFarm+1, production.productionFood=(buildings.buildingsFarm)*5, users.usersMoney = users.usersMoney - 10000 * POWER(buildingsFarm, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsFarm < buildingsMax AND usersMoney > buildingsFarmPrice";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
 
+    $sql2 = "UPDATE buildings, users SET buildingsFarmPrice = 10000 * POWER(buildingsFarm+1, 2)  WHERE buildingsUser= ? AND usersUid=?;";
+    $stmt= $conn->prepare($sql2);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
 
+    header("location: ../../cities/capital.php?error=worked");
+    exit();
+}
+
+function buildCapitalCoalmine($conn, $build, $username) {
+    $sql = "UPDATE buildings, production, users SET buildingsCoalmine=buildingsCoalmine+1, production.productionCoal=(buildings.buildingsCoalmine)*5, users.usersMoney = users.usersMoney - 15000 * POWER(buildingsCoalmine, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsCoalmine < buildingsMax AND usersMoney > buildingsCoalminePrice";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    $sql2 = "UPDATE buildings, users SET buildingsCoalminePrice = 15000 * POWER(buildingsCoalmine+1, 2)  WHERE buildingsUser= ? AND usersUid=?;";
+    $stmt= $conn->prepare($sql2);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    header("location: ../../cities/capital.php?error=worked");
+    exit();
+}
+
+function buildCapitalIronmine($conn, $build, $username) {
+    $sql = "UPDATE buildings, production, users SET buildingsIronmine=buildingsIronmine+1, production.productionIron=(buildings.buildingsIronmine)*5, users.usersMoney = users.usersMoney - 20000 * POWER(buildingsIronmine, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsIronmine < buildingsMax AND usersMoney > buildingsIronminePrice";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    $sql2 = "UPDATE buildings, users SET buildingsIronminePrice = 20000 * POWER(buildingsIronmine+1, 2)  WHERE buildingsUser= ? AND usersUid=?;";
+    $stmt= $conn->prepare($sql2);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    header("location: ../../cities/capital.php?error=worked");
+    exit();
+}
+
+function buildCapitalResidential($conn, $build, $username) {
+    $sql = "UPDATE buildings, production, users SET buildingsRB = buildingsRB + 1, users.usersPopulation = users.usersPopulation + 1000, users.usersMoney = users.usersMoney - 500 * POWER(buildingsRB, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsRB < buildingsMax AND usersMoney > buildingsRBPrice";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    $sql2 = "UPDATE buildings, users SET buildingsRBPrice = 500 * POWER(buildingsRB+1, 2)  WHERE buildingsUser= ? AND usersUid=?;";
+    $stmt= $conn->prepare($sql2);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    header("location: ../../cities/capital.php?error=worked");
+    exit();
+}
+
+function buildCapitalCommercial($conn, $build, $username) {
+    $sql = "UPDATE buildings, production, users SET buildingsCB = buildingsCB + 1, users.usersMoneyperhour = users.usersMoneyperhour + 50, users.usersMoney = users.usersMoney - 500 * POWER(buildingsCB, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsCB < buildingsMax AND usersMoney > buildingsCBPrice";
+    $stmt= $conn->prepare($sql);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    $sql2 = "UPDATE buildings, users SET buildingsCBPrice = 800 * POWER(buildingsCB+1, 2)  WHERE buildingsUser= ? AND usersUid=?;";
+    $stmt= $conn->prepare($sql2);
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+
+    header("location: ../../cities/capital.php?error=worked");
     exit();
 }

@@ -12,6 +12,8 @@ $sqlSetFood = "UPDATE production, items SET items.itemsFood=items.itemsFood + pr
 $sqlSetCoal = "UPDATE production, items SET items.itemsCoal=items.itemsCoal + production.productionCoal WHERE items.itemsUser = production.productionUser";
 $sqlSetIron = "UPDATE production, items SET items.itemsIron=items.itemsIron + production.productionIron WHERE items.itemsUser = production.productionUser";
 
+$sqlMoneyperhour = "UPDATE users SET usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness";
+
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../user/setup.php?error=stmtfailed");
@@ -55,6 +57,12 @@ if (mysqli_query($conn, $sqlSetCoal)) {
 }
 
 if (mysqli_query($conn, $sqlSetIron)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlMoneyperhour)) {
     echo 'worked';
 }  else {
     echo 'not working';

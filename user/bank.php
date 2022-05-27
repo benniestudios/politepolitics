@@ -30,19 +30,19 @@
         <tr><th>Account Name</th><td>" . $row["usersUid"]. "</td></tr>
         <tr><th>Nation</th><td>" . $row["usersNationName"]. "</td></tr>
         <tr><th>Bank Balance</th><td>$" . number_format($row["usersMoney"], 2). "</td></tr>
-        
-        
+
+
     </table>
     <table class='headergame'>
         <h1 class='headergame' id='bank'>Taxes</h1>
         <tr><th>Current tax rate</th><td>" . $row["usersTaxes"]. "%</td></tr>
-        <tr><th>Money per hour</th><td>$" . number_format($row["usersTaxes"]*0.001*$row["usersPopulation"]/5+$row['usersHappiness'], 2) . "/h</td></tr>
+        <tr><th>Money per hour</th><td>$" . number_format($row["usersMoneyperhour"], 2) . "/h</td></tr>
 
-            
 
-        
+
+
     </table>
-    
+
     <form action='../includes/tax.inc.php' method='post' class='taxrate'>
         <b><label for='changetaxrate'>Change tax rate:</label></b><br>
         <input type='hidden' name='userid' value='$userid'><br>

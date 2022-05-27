@@ -9,8 +9,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Polite Politics</title>
-  <script src="https://cdn.lr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
-<script>window.LogRocket && window.LogRocket.init('qsxdth/bennie-studios');</script>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/reset.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -48,7 +46,7 @@
       } else {
         $smiley = '😭';
       }
-      echo "<div class='resources-overview'><p id='money-view'><b>💲Money: </b>" . number_format($row["usersMoney"]) . "<p id='moneyadd-view'> + $" . number_format($row["usersTaxes"]*0.001*$row["usersPopulation"]/5+$row['usersHappiness'], 2) . "/h</p><p>";
+      echo "<div class='resources-overview'><p id='money-view'><b>💲Money: </b>" . number_format($row["usersMoney"]) . "<p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . "/h</p><p>";
       echo "<p id='population-view'><b>👥Population: </b>" . number_format($row["usersPopulation"]). "<p>";
       echo "<p id='rp-view'><b>🔬Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
       echo "<p id='time-view'><b>⏰Time: </b><p>";
@@ -63,13 +61,13 @@
         <table class='itemstableheader'>
 
 
-        <tr><td><p>Food</p>" . $row["itemsFood"]. "</td></tr>
-        <tr><td><p>Iron</p>" . $row["itemsIron"]. "</td></tr>
-        <tr><td><p>Coal</p>" . $row["itemsCoal"]. "</td></tr>
-        <tr><td><p>Aluminium</p>" . $row["itemsAluminium"] . "</td></tr>
-        <tr><td><p>Oil</p>" . $row["itemsOil"] . "</td></tr>
-        <tr><td><p>Steel</p>" . $row["itemsSteel"] . "</td></tr>
-        <tr><td><p>Uranium</p>" . $row["itemsUranium"] . "</td></tr>
+        <tr><td><p>Food</p>" . number_format($row["itemsFood"]) . "</td></tr>
+        <tr><td><p>Iron</p>" . number_format($row["itemsIron"]) . "</td></tr>
+        <tr><td><p>Coal</p>" . number_format($row["itemsCoal"]) . "</td></tr>
+        <tr><td><p>Aluminium</p>" . number_format($row["itemsAluminium"]) . "</td></tr>
+        <tr><td><p>Oil</p>" . number_format($row["itemsOil"]) . "</td></tr>
+        <tr><td><p>Steel</p>" . number_format($row["itemsSteel"]) . "</td></tr>
+        <tr><td><p>Uranium</p>" . number_format($row["itemsUranium"]) . "</td></tr>
         </table>";
     }
     }
