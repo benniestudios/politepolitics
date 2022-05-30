@@ -7,7 +7,8 @@
 
     require_once '../includes/dbh.inc.php';
     $userid = $_SESSION["userid"];
-    $query = mysqli_query($conn, "SELECT * FROM users WHERE usersId='$userid';");
+    $username = $_SESSION["useruid"];
+    $query = mysqli_query($conn, "SELECT * FROM users, cities WHERE usersId='$userid' AND citiesUid='$username';");
 
     if (!$query)
     {
@@ -25,9 +26,15 @@
             <tr><th>Leader name</th><td>" . $row["usersUid"]. "</td></tr>
             <tr><th>Nation</th><td>" . $row["usersNationName"]. "</td></tr>
             <tr><th>Form of government</th><td>" . $row["usersNationType"]. "</td></tr>
+            <tr><th>Tax Percentage</th><td>" . $row["usersTaxes"]. "%</td></tr>
+            <tr><th>Population Happiness</th><td>" . $row["usersHappiness"]. "%</td></tr>
+            <tr><th>Score</th><td>" . number_format($row["usersTotalscore"]). "</td></tr>
+            <tr><th style='background-color:white; border: none;'></th><td style='background-color:white;border: none;'></td></tr>
+            <tr><th>Capital City</th><td>" . $row["citiesCapital"]. "</td></tr>
+            <tr><th>Population</th><td>" . number_format($row["usersPopulation"]) . "</td></tr>
         </table>
-        
-        
+
+
     </center>";
     }
     else {

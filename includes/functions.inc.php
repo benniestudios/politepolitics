@@ -203,7 +203,7 @@ function moremoney($conn, $userid) {
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("isi", $numberzero, $time, $userid);
     $stmt->execute();
-    header("location: ../user/index.php?error=worked");
+    header("location: ../user/daily.php?error=worked");
     exit();
 }
 

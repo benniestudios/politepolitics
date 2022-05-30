@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9a0eba2a-9c51-4b4e-a9a3-dd791514aace" type="text/javascript" async></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,8 @@
   <link rel="stylesheet" href="../css/reset.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script src="https://kit.fontawesome.com/e6e886a038.js" crossorigin="anonymous"></script> <!-- font awasome -->
+  <script src="https://kit.fontawesome.com/e6e886a038.js" crossorigin="anonymous"></script> <!-- font awasome -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
 </head>
 <body onload="startTime()">
 
@@ -94,13 +96,13 @@
         <?php
           if (isset($_SESSION["useruid"])) {
             echo "<br><center><li class='menulabel'>Nation</li></center><br>";
-            echo "<li class='gamemenu'><a href='../'><i class='fa-solid fa-landmark-flag'></i></a></li>";
-            echo "<li class='gamemenu'><a href='../cities/index.php'><i class='fa-solid fa-building'></i></a></li>";
-            echo "<li class='gamemenu'><a href='../user/bank.php'><i class='fa-solid fa-piggy-bank'></i></a></li>";
-            echo "<li class='gamemenu'><a href='../user/daily.php'><i class='fa-solid fa-gift'></i></i></a></li>";
-            echo "<li class='gamemenu'><a href='../user/setup.php'><i class='fa-solid fa-screwdriver-wrench'></i></a></li>";
+            echo "<div class='tooltip'><li class='gamemenu' id='nation'><a href='../'><i class='fa-solid fa-landmark-flag'><span class='tooltiptext'>Nation</span></i></a></li></div>";
+            echo "<div class='tooltip'><li class='gamemenu' id='cities'><a href='../cities/index.php'><i class='fa-solid fa-building'><span class='tooltiptext'>Cities</span></i></a></li></div>";
+            echo "<div class='tooltip'><li class='gamemenu' id='banklink'><a href='../user/bank.php'><i class='fa-solid fa-piggy-bank'><span class='tooltiptext'>Bank</span></i></a></li></div>";
+            echo "<div class='tooltip'><li class='gamemenu' id='daily'><a href='../user/daily.php'><i class='fa-solid fa-gift'><span class='tooltiptext'>Daily Reward</span></i></i></a></li></div>";
+            echo "<div class='tooltip'><li class='gamemenu' id='options'><a href='../user/setup.php'><i class='fa-solid fa-screwdriver-wrench'><span class='tooltiptext'>Setup</span></i></a></li></div>";
             echo "<br><center><li class='menulabel'>World</li></center><br>";
-            echo "<li class='gamemenu'><a href='../user/nations.php'><i class='fa-solid fa-earth-europe'></i></a></li>";
+            echo "<div class='tooltip'><li class='gamemenu' id='nations'><a href='../user/nations.php'><i class='fa-solid fa-earth-europe'><span class='tooltiptext'>Nations</span></i></a></li></div>";
 
           }
           else {
