@@ -705,3 +705,24 @@ button {
   border-style: solid;
   border-color: transparent white transparent transparent;
 }
+
+.admintablescroll {
+    display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      width: 100%;
+}
+
+.admintable {
+  border-collapse: collapse;
+  margin-left: 253px;
+
+}
+.admintable tr, .admintable th, .admintable td {
+  border: solid;
+  border-width: 1px 0;
+  padding: 2px;
+  box-sizing: border-box;
+  width: 180px;
+  text-align: center;
+}
