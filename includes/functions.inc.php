@@ -155,11 +155,12 @@ function emptyInputCapital($citiename) {
     return $result;
 }
 
-function setupUser($conn, $nationname, $nationtype, $userid) {
+function setupUser($conn, $nationname, $nationtype, $userid, $color) {
     $numberone = 1;
+    $nationfill = "<p style='color:$color;font-weight:bold;text-shadow: 2px 2px 10px black;'>$nationname</p>";
     $sql = "UPDATE users SET usersNationName=?, usersNationType=?, usersSetup=? WHERE usersId=?;";
     $stmt= $conn->prepare($sql);
-    $stmt->bind_param("ssii", $nationname, $nationtype, $numberone, $userid);
+    $stmt->bind_param("ssii", $nationfill, $nationtype, $numberone, $userid);
     $stmt->execute();
 
     header("location: ../user/index.php?error=worked");

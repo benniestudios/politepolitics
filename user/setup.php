@@ -1,5 +1,5 @@
 <?php
-    include_once 'header.php';
+    include_once '../includes/header.php';
 ?>
 
 <center>
@@ -13,10 +13,17 @@
             <option value="Monarchy">Monarchy</option>
         </select>
         <br />
+        <label class="setup-form" for="color">National Color: </label>
+        <select id="nationtype" name="color" size="1">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <br />
         <button type="submit" name="submit">Submit</button>
     </form>
 </center>
 
 <?php
-    include_once 'footer.php';
+    include_once '../includes/footer.php';
 ?>

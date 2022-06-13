@@ -1,5 +1,5 @@
 ﻿<?php
-          include_once 'header.php';
+          include_once '../includes/header.php';
         ?>
 
 <div class="game">
@@ -31,7 +31,7 @@
         $index_num += 1;
     echo "
     <center>
-    
+
     <table class='nationstable'>
         <tr>
             <td id='index-num'>" . $index_num . "</td>
@@ -40,13 +40,13 @@
             <td>" . $row["usersPopulation"]. "</td>
             <td>" . number_format($row["usersTotalscore"]). "</td>
         </tr>
-        
-        
+
+
     </table>
     ";
     }
 
-    
+
 
     else {
     header('location: setup.php?error=notsetup');
@@ -62,5 +62,5 @@
 
 
 <?php
-          include_once 'footer.php';
+          include_once '../includes/footer.php';
         ?>

@@ -1,5 +1,5 @@
 ﻿<?php
-          include_once 'header.php';
+          include_once '../includes/header.php';
         ?>
 
 <div class="game">
@@ -27,8 +27,8 @@
                             <td>" . $row["citiesCapitalPopulation"]. "</td>
                             <td>Capital</td>
                         </tr>
-                        
-        
+
+
                     </table>
                     <br><br><br><br><br><br><br><br><br><br>
                 </center>";
@@ -44,5 +44,5 @@
 
 <script src="../javascript/cities.js"></script>
 <?php
-          include_once 'footer.php';
+          include_once '../includes/footer.php';
         ?>
