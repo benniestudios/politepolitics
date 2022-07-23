@@ -10,8 +10,62 @@ main {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
+.overlay {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    background-color: darkred;
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
     position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 60px;
+  }
+  
+@media screen and (max-height: 450px) {
+    .overlay a, .overlay div {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+}
+
+.navbar {
+    position: block;
     left: 0;
     margin-top: 0px;
     padding: 8px;
@@ -19,9 +73,9 @@ main {
     background-color: #15202b;
 }
 
-.navbar a {
-    position: relative;
-    text-align: center;
+.navbar span {
+    position: absolute;
+    text-align: left;
     display: block;
     background-color: darkred;
     color: white;
@@ -49,13 +103,11 @@ main {
 .menulabel {
     font-size: 18px;
     font-family: Arial;
-    background-color: black;
     padding: 5px;
     padding-top: 7px;
     padding-bottom: 7px;
-    border: black 2px solid;
     border-radius: 10px;
-    text-shadow: 0 0 10px #fff;
+    text-shadow: 0 0 5px darkred;
     font-weight: bold;
 }
 
@@ -104,7 +156,7 @@ main {
     100% {font-size: 40px;}
 }
 
-header img {
+#logo, header img {
     margin-top: 10px;
     margin-bottom: 50px;
     width: 30%
@@ -164,30 +216,27 @@ header img {
     margin-right: 250px;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px red;
-    font-size: 35px;
+    font-size: 15px;
     margin-top: 50px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f2f2f2;
     color: black;
 }
 
-    .signup-form input[type=text], .signup-form input[type=password] {
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 2px solid black;
-        box-shadow: 0 0 2px 2px black;
-        border-radius: 4px;
-        transition: 1s ease-in-out;
-        background-color: lightgrey;
-        color: black;
-    }
+.signup-form input[type=text], .signup-form input[type=password], .signup-form input[type=number] {
+    width: 20%;
+    padding: 8px 16px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    box-shadow: 0 0 2px 2px black;
+    border-radius: 4px;
+    transition: 1s ease-in-out;
+    background-color: lightgrey;
+    color: black;
+}
 
-.signup-form input[type=text]:focus, .signup-form input[type=password]:focus {
-    width: 55%;
-    padding: 14px 25px;
+.signup-form input[type=text]:focus, .signup-form input[type=password]:focus, .signup-form input[type=number]:focus {
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid red;
@@ -195,7 +244,7 @@ header img {
     border-radius: 4px;
 }
 
-.signup-form button[type=button], .signup-form button[type=submit], .signup-form button[type=reset] {
+.signup-form button[type=button], .signup-form button[type=submit], .signup-form button[type=reset], .signup-form input[type=submit] {
     background-color: darkred;
     border: none;
     border-radius: 4px;
@@ -229,14 +278,11 @@ button {
     margin: 8px 8px;
     box-sizing: border-box;
     border: 2px solid black;
-    box-shadow: 0 0 10px red;
     border-radius: 4px;
     transition: 1s ease-in-out;
 }
 
 .signup-form select:hover {
-    width: 30%;
-    padding: 12px 20px;
     margin: 8px 8px;
     box-sizing: border-box;
     border: 2px solid black;
@@ -244,10 +290,17 @@ button {
     border-radius: 4px;
 }
 
+.signup-form option {
+    background-color: white;
+    color: black;
+    padding:8px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
 .gamemenu {
-
     color: white;
-
 }
 
 #money-view {
@@ -264,8 +317,8 @@ button {
 
 #moneyadd-view {
     position: absolute;
-    top: 2px;
-    left: 152px;
+    top: 29px;
+    left: 2px;
     background-color: lightgreen;
     color: green;
     padding: 3px;
@@ -277,7 +330,7 @@ button {
 
 #population-view {
     position: absolute;
-    top: 27px;
+    top: 56px;
     left: 2px;
     background-color: #f2f2f2;
     color: black;
@@ -301,7 +354,7 @@ button {
 
 #rp-view {
     position: absolute;
-    top: 52px;
+    top: 83px;
     left: 2px;
     background-color: #f2f2f2;
     color: black;
@@ -321,20 +374,12 @@ button {
     border: 1px solid orange;
     border-radius: 4px;
     box-shadow: 0 0 2px 2px orange;
-    animation: blinkingBackground 10s infinite;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes blinkingBackground{
-    0%		{ background-color: black; color: white;}
-    50%	    { background-color: #f2f2f2; color: black;}
-    100%	{ background-color: black; color: white;}
 }
 
 #happiness-view {
     position: absolute;
     top: 2px;
-    right: 130px;
+    right: 132px;
     background-color: #f2f2f2;
     color: black;
     padding: 3px;
@@ -426,30 +471,28 @@ button {
 }
 
 .nationstable {
-    display: block;
+    display:table;
     font-size: 15px;
-    text-align: center;
+    text-align: left;
     font-family: Arial;
     margin-left: 250px;
     margin-right: 250px;
     color: black;
     margin-top: 0;
     margin-bottom: 0;
+    width: 61%;
 }
 
 .nationstable th, .nationstable td {
     border: solid #2d0000 3px;
     border-radius: 10px;
-    padding: 10px;
-    width: 152px;
+    padding: 7px;
+    width: 100px;
     transition: 0.5s;
     margin: 0;
     background-color: #f2f2f2;
 }
 
-#index-num {
-    width: 40px;
-}
 
 .nationstable th:hover, .nationstable td:hover {
     background-color: lightgoldenrodyellow;
@@ -585,7 +628,7 @@ button {
 }
 
 .itemstableheader {
-    position: absolute;
+    position: fixed;
     display: block;
     font-size: 20px;
     text-align: center;
@@ -596,10 +639,12 @@ button {
     right: 0;
     padding: 10px;
     background-color: #15202b;
+    transition-duration: 1s;
 }
 
 .itemstableheader td {
     padding-top: 5px;
+    font-size: 17px;
     padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
@@ -706,23 +751,135 @@ button {
   border-color: transparent white transparent transparent;
 }
 
-.admintablescroll {
+.rsprod {
+    font-size: 10px;
+    color: lightgreen;;
+    font-weight: bold;
+}
+
+#marketbutton {
+    position: relative;
     display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-      width: 100%;
+    background-color: darkred;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    width: 40px;
 }
 
-.admintable {
-  border-collapse: collapse;
-  margin-left: 253px;
+@media screen and (max-width: 1000px) {
+    #headmainpage {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 
-}
-.admintable tr, .admintable th, .admintable td {
-  border: solid;
-  border-width: 1px 0;
-  padding: 2px;
-  box-sizing: border-box;
-  width: 180px;
-  text-align: center;
+    .headergame {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .itemstableheader {
+        position:relative;
+        font-size: 15px;
+        text-align: center;
+        font-family: Arial;
+        color: black;
+        margin-top: 0;
+        margin-bottom: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #15202b;
+    }
+
+    .itemstableheader td {
+        padding-top: 5px;
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: black;
+        color: white;
+        border: 2px solid orange;
+        width: 1000px;
+    }
+    
+    .itemstableheader p {
+        border-bottom: 2px solid orange;
+        margin-bottom: 5px;
+        background-color: darkred;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-weight: bold;
+    }
+
+    .signup-form {
+        position: relative;
+        display: block;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 15px;
+        margin-top: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    .buildingstable {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .nationstable {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .taxrate {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .navbar span {
+        position: absolute;
+        text-align: center;
+        display: block;
+        background-color: darkred;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        margin-left: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: black solid 2px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: 0.5s;
+        padding: 10px;
+        text-shadow: 0 0 5px black;
+    }
+
+    .dailyreward {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #time-view {
+        display: none;
+    }
+
+    #happiness-view {
+        right: 2px;
+    }
+
+    #rp-view {
+        display: none;
+    }
 }

@@ -16,8 +16,10 @@
     }
 
     if(mysqli_num_rows($query) > 0){
-        echo "<h1 class='headergame' id='nationsheader'>Nations</h1>";
-        echo "<table class='nationstable'>
+        echo "
+        <center>
+            <table class='nationstable'>
+                <h1 class='headergame' id='nationsheader'>Nations</h1>
                 <tr>
                     <th id='index-num'>📊</th>
                     <th>Username</th>
@@ -25,13 +27,13 @@
                     <th>Population</th>
                     <th>Total Score</th>
                 </tr>
-              </table>";
+            </table>
+        </center>";
     while($row = mysqli_fetch_assoc($query)) {
     if ($row["usersSetup"] === '1') {
         $index_num += 1;
     echo "
     <center>
-
     <table class='nationstable'>
         <tr>
             <td id='index-num'>" . $index_num . "</td>

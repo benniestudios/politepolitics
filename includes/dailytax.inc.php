@@ -12,7 +12,7 @@ $sqlSetFood = "UPDATE production, items SET items.itemsFood=items.itemsFood + pr
 $sqlSetCoal = "UPDATE production, items SET items.itemsCoal=items.itemsCoal + production.productionCoal WHERE items.itemsUser = production.productionUser";
 $sqlSetIron = "UPDATE production, items SET items.itemsIron=items.itemsIron + production.productionIron WHERE items.itemsUser = production.productionUser";
 
-$sqlMoneyperhour = "UPDATE users SET usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness";
+$sqlMoneyperhour = "UPDATE users, buildings SET usersMoneyfactor=buildingsCB*50, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 10 + usersHappiness + usersMoneyfactor WHERE buildings.buildingsUser = users.usersUid";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {

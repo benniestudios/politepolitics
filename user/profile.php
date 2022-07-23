@@ -1,6 +1,6 @@
 <?php
           include_once '../includes/header.php';
-        ?>
+?>
 
 <div class="game">
     <?php
@@ -9,7 +9,12 @@
 
     $getName = $_GET['user'];
 
-    $result = mysqli_query($conn, "SELECT * FROM cities, users WHERE citiesUid='$getName' AND usersUid='$getName';");
+    $result = mysqli_query($conn, "SELECT * FROM cities, users WHERE citiesUid=? AND usersUid=?;");
+    $stmt= $conn->prepare($result);
+    $stmt->bind_param("ss", $getName, $getName);
+    $stmt->execute();
+
+
     $num_rows = mysqli_num_rows($result);
     if ($num_rows == 0) {
         header("Location: index.php");

@@ -9,8 +9,6 @@ if (isset($_POST["build"])) {
     require_once '../dbh.inc.php';
     require_once '../functions.inc.php';
 
-    echo $_POST["build"];
-
     if ($build == "food") {
         buildCapitalFarm($conn, $build, $username);
     } elseif ($build == "coal") {
@@ -21,6 +19,12 @@ if (isset($_POST["build"])) {
         buildCapitalCommercial($conn, $build, $username);
     } elseif ($build == "residential") {
         buildCapitalResidential($conn, $build, $username);
+    } elseif ($build == "oil") {
+        buildCapitalOil($conn, $build, $username);
+    } elseif ($build == "uranium") {
+        buildCapitalUranium($conn, $build, $username);
+    } elseif ($build == "steel") {
+        buildCapitalSteel($conn, $build, $username);
     } else {
         header("location: ../../cities/capital.php?error=nofood");
         exit();
