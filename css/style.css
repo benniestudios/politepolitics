@@ -1,724 +1,763 @@
 body {
-    /*background-color: #323232;*/
-    background-color: #15202b;
-    /*background-image: url('../images/background.png');*/
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
+  /*background-color: #323232;*/
+  background-color: #15202b;
+  /*background-image: url('../images/background.png');*/
+  color: white;
+  font-family: "Courier New", Courier, monospace;
 }
 
 main {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .overlay {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-  
-  .overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 30px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    background-color: darkred;
-    margin: 10px;
-    border-radius: 10px;
-  }
-  
-  .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-  }
-  
-  .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 15px;
-    font-size: 60px;
-  }
-  
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  background-color: darkred;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 60px;
+}
+
 @media screen and (max-height: 450px) {
-    .overlay a, .overlay div {font-size: 20px}
-    .overlay .closebtn {
+  .overlay a,
+  .overlay div {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
-    }
+  }
 }
 
 .navbar {
-    position: block;
-    left: 0;
-    margin-top: 0px;
-    padding: 8px;
-    padding-left: 0;
-    background-color: #15202b;
+  position: block;
+  left: 0;
+  margin-top: 0px;
+  padding: 8px;
+  padding-left: 0;
+  background-color: #15202b;
 }
 
 .navbar span {
-    position: absolute;
-    text-align: left;
-    display: block;
-    background-color: darkred;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin-left: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    border: black solid 2px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transition: 0.5s;
-    padding: 10px;
-    text-shadow: 0 0 5px black;
+  position: relative;
+  text-align: center;
+  display: block;
+  background-color: darkred;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: black solid 2px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: 0.5s;
+  padding: 10px;
+  text-shadow: 0 0 5px black;
+  width: 40px;
+  margin-top: 20px;
 }
 
 .navbar a:hover {
-    background-color: rgb(204, 133, 2);
-    border: rgb(204, 133, 2) solid 2px;
+  background-color: rgb(204, 133, 2);
+  border: rgb(204, 133, 2) solid 2px;
 }
 
 .navbar a:active {
-    color: red;
+  color: red;
 }
 
 .menulabel {
-    font-size: 18px;
-    font-family: Arial;
-    padding: 5px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 10px;
-    text-shadow: 0 0 5px darkred;
-    font-weight: bold;
+  font-size: 18px;
+  font-family: Arial;
+  padding: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 10px;
+  text-shadow: 0 0 5px darkred;
+  font-weight: bold;
 }
 
-
 .signup-form-form {
-    margin: 5px;
-    margin-top: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .error {
-    font-size: 10px;
-    color: red;
+  font-size: 10px;
+  color: red;
 }
 
 .successful {
-    font-size: 20px;
-    color: green;
+  font-size: 20px;
+  color: green;
 }
 
 #headmainpage {
-    position: relative;
-    font-size: 40px;
-    margin-top: 200px;
-    font-weight: bold;
-    text-shadow: 0 5px 10px yellow, 0 -5px 15px rgb(0, 110, 255);
-    animation-name: headtext;
-    animation-duration: 4s;
+  position: relative;
+  font-size: 40px;
+  margin-top: 200px;
+  font-weight: bold;
+  text-shadow: 0 5px 10px yellow, 0 -5px 15px rgb(0, 110, 255);
+  animation-name: headtext;
+  animation-duration: 4s;
 
-    display: block;
-    font-family: Arial;
-    margin: 30px;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 50px;
-    background-color: #f2f2f2;
-    color: black;
-    border: solid #2d0000 2px;
-    border-radius: 10px;
+  display: block;
+  font-family: Arial;
+  margin: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 50px;
+  background-color: #f2f2f2;
+  color: black;
+  border: solid #2d0000 2px;
+  border-radius: 10px;
 }
 
 @keyframes headtext {
-    0% {font-size: 10px;}
-    40% {font-size: 20px;}
-    80% {font-size: 30px;}
-    100% {font-size: 40px;}
+  0% {
+    font-size: 10px;
+  }
+  40% {
+    font-size: 20px;
+  }
+  80% {
+    font-size: 30px;
+  }
+  100% {
+    font-size: 40px;
+  }
 }
 
-#logo, header img {
-    margin-top: 10px;
-    margin-bottom: 50px;
-    width: 30%
+#logo,
+header img {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  width: 30%;
 }
 
 .gametext {
-    margin-top: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .headergame {
-    display: block;
-    font-size: 15px;
-    text-align: left;
-    font-family: Arial;
-    margin: 30px;
-    margin-left: 250px;
-    margin-right: 250px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    color: black;
-    border: solid #2d0000 2px;
-    border-radius: 2px;
+  display: block;
+  font-size: 15px;
+  text-align: left;
+  font-family: Arial;
+  margin: 30px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: black;
+  border: solid #2d0000 2px;
+  border-radius: 2px;
 }
 
 .dailyreward {
-    display: block;
-    font-size: 25px;
-    text-align: center;
-    font-family: Arial;
-    margin: 30px;
-    margin-left: 250px;
-    margin-right: 250px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    color: black;
-    border: solid #2d0000 2px;
-    border-radius: 10px;
+  display: block;
+  font-size: 25px;
+  text-align: center;
+  font-family: Arial;
+  margin: 30px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: black;
+  border: solid #2d0000 2px;
+  border-radius: 10px;
 }
 
-.headergame th, .headergame td {
-    border: solid black 3px;
-    padding: 7px;
-    width: 100%;
+.headergame th,
+.headergame td {
+  border: solid black 3px;
+  padding: 7px;
+  width: 100%;
 }
 
 .headergame th {
-    font-weight: bold;
-    background-color: darkred;
-    color: white;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
 }
 
 .signup-form {
-    position: relative;
-    display: block;
-    margin-left: 250px;
-    margin-right: 250px;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-top: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-    color: black;
+  position: relative;
+  display: block;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f2f2;
+  color: black;
 }
 
-.signup-form input[type=text], .signup-form input[type=password], .signup-form input[type=number] {
-    width: 20%;
-    padding: 8px 16px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid black;
-    box-shadow: 0 0 2px 2px black;
-    border-radius: 4px;
-    transition: 1s ease-in-out;
-    background-color: lightgrey;
-    color: black;
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="number"] {
+  width: 20%;
+  padding: 8px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  box-shadow: 0 0 2px 2px black;
+  border-radius: 4px;
+  transition: 1s ease-in-out;
+  background-color: lightgrey;
+  color: black;
 }
 
-.signup-form input[type=text]:focus, .signup-form input[type=password]:focus, .signup-form input[type=number]:focus {
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    box-shadow: 0 0 10px green;
-    border-radius: 4px;
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus,
+.signup-form input[type="number"]:focus {
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  box-shadow: 0 0 10px green;
+  border-radius: 4px;
 }
 
-.signup-form button[type=button], .signup-form button[type=submit], .signup-form button[type=reset], .signup-form input[type=submit] {
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 12px;
+.signup-form button[type="button"],
+.signup-form button[type="submit"],
+.signup-form button[type="reset"],
+.signup-form input[type="submit"] {
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 button {
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 12px;
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 .setup-form {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .signup-form select {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 8px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
-    transition: 1s ease-in-out;
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition: 1s ease-in-out;
 }
 
 .signup-form select:hover {
-    margin: 8px 8px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    box-shadow: 0 0 10px red;
-    border-radius: 4px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  box-shadow: 0 0 10px red;
+  border-radius: 4px;
 }
 
 .signup-form option {
-    background-color: white;
-    color: black;
-    padding:8px;
-    width: 100%;
-    font-size: 16px;
-    text-align: center;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
 }
 
 .gamemenu {
-    color: white;
+  color: white;
 }
 
 #money-view {
-    position:absolute;
-    top: 2px;
-    left: 2px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #moneyadd-view {
-    position: absolute;
-    top: 29px;
-    left: 2px;
-    background-color: lightgreen;
-    color: green;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
-    font-weight: bold;
+  position: absolute;
+  top: 29px;
+  left: 2px;
+  background-color: lightgreen;
+  color: green;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
+  font-weight: bold;
 }
 
 #population-view {
-    position: absolute;
-    top: 56px;
-    left: 2px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 56px;
+  left: 2px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #bm-view {
-    position: absolute;
-    top: 103px;
-    left: 2px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 103px;
+  left: 2px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #rp-view {
-    position: absolute;
-    top: 83px;
-    left: 2px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 83px;
+  left: 2px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #time-view {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #happiness-view {
-    position: absolute;
-    top: 2px;
-    right: 132px;
-    background-color: #f2f2f2;
-    color: black;
-    padding: 3px;
-    border: 1px solid orange;
-    border-radius: 4px;
-    box-shadow: 0 0 2px 2px orange;
+  position: absolute;
+  top: 2px;
+  right: 132px;
+  background-color: #f2f2f2;
+  color: black;
+  padding: 3px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px orange;
 }
 
 #happinesswarning {
-    font-size: 10px;
-    color: red;
+  font-size: 10px;
+  color: red;
 }
 
 #bank {
-    position: relative;
-    margin-top: 50px;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0;
+  position: relative;
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 ::selection {
-    color: black;
-    background-color: orange;
+  color: black;
+  background-color: orange;
 }
 
 .taxrate {
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    font-family: Arial;
-    margin: 30px;
-    margin-left: 250px;
-    margin-right: 250px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    color: black;
-    border: solid #2d0000 2px;
-    border-radius: 2px;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial;
+  margin: 30px;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: black;
+  border: solid #2d0000 2px;
+  border-radius: 2px;
 }
 
 .taxrate button {
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 12px;
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-.taxrate input[type=range] {
-    color: red;
-    background-color: black;
+.taxrate input[type="range"] {
+  color: red;
+  background-color: black;
 }
 
 .slider {
-    -webkit-appearance: none;
-    width: 80%;
-    height: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: darkred;
-    cursor: pointer;
- }
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: darkred;
+  cursor: pointer;
+}
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: darkred;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: darkred;
+  cursor: pointer;
 }
 
 .nationstable {
-    display:table;
-    font-size: 15px;
-    text-align: left;
-    font-family: Arial;
-    margin-left: 250px;
-    margin-right: 250px;
-    color: black;
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 61%;
+  display: table;
+  font-size: 15px;
+  text-align: left;
+  font-family: Arial;
+  margin-left: 250px;
+  margin-right: 250px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 61%;
 }
 
-.nationstable th, .nationstable td {
-    border: solid #2d0000 3px;
-    border-radius: 10px;
-    padding: 7px;
-    width: 100px;
-    transition: 0.5s;
-    margin: 0;
-    background-color: #f2f2f2;
+.nationstable th,
+.nationstable td {
+  border: solid #2d0000 3px;
+  border-radius: 10px;
+  padding: 7px;
+  width: 100px;
+  transition: 0.5s;
+  margin: 0;
+  background-color: #f2f2f2;
 }
 
-
-.nationstable th:hover, .nationstable td:hover {
-    background-color: lightgoldenrodyellow;
+.nationstable th:hover,
+.nationstable td:hover {
+  background-color: lightgoldenrodyellow;
 }
 
 .nationstable th {
-    font-weight: bold;
-    background-color: darkred;
-    color: white;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
 }
 
 .itemstable {
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    font-family: Arial;
-    margin-left: 240px;
-    margin-right: 240px;
-    background-color: #f2f2f2;
-    color: black;
-    margin-top: 0;
-    margin-bottom: 0;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial;
+  margin-left: 240px;
+  margin-right: 240px;
+  background-color: #f2f2f2;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.itemstable th, .itemstable td {
-    border: solid #2d0000 3px;
-    border-radius: 10px;
-    padding: 5px;
-    width: 100px;
-    transition: 0.5s;
-    margin: 0;
+.itemstable th,
+.itemstable td {
+  border: solid #2d0000 3px;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100px;
+  transition: 0.5s;
+  margin: 0;
 }
 
-.itemstable th:hover, .itemstable td:hover {
-    background-color: lightgoldenrodyellow;
+.itemstable th:hover,
+.itemstable td:hover {
+  background-color: lightgoldenrodyellow;
 }
 
 .itemstable th {
-    background-color: #f5e7e7;
-    font-weight: bold;
+  background-color: #f5e7e7;
+  font-weight: bold;
 }
 
 #nationsheader {
-    position: relative;
-    margin-top: 50px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  position: relative;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .emoji {
-    width: 20px;
-    height: auto;
-    vertical-align:baseline;
+  width: 20px;
+  height: auto;
+  vertical-align: baseline;
 }
 
-
 .modal {
-    display: none;
-    position: fixed;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  position: relative;
+  background-color: black;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+  color: white;
+  border: white solid 4px;
+  border-radius: 5px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.close-btn {
+  float: right;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+  cursor: pointer;
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: 500px;
+    opacity: 0;
   }
-  .modal-content {
-    position: relative;
-    background-color: black;
-    padding: 20px;
-    margin: auto;
-    width: 75%;
-    color: white;
-    border: white solid 4px;
-    border-radius: 5px;
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+  to {
+    top: 0;
+    opacity: 1;
   }
-  .close-btn {
-    float: right;
-    color: lightgray;
-    font-size: 24px;
-    font-weight: bold;
+}
+@keyframes animatetop {
+  from {
+    top: 500px;
+    opacity: 0;
   }
-  .close-btn:hover {
-    color: darkgray;
-    cursor:pointer;
+  to {
+    top: 0;
+    opacity: 1;
   }
-  @-webkit-keyframes animatetop {
-    from {top:500px; opacity:0}
-    to {top:0; opacity:1}
-  }
-  @keyframes animatetop {
-    from {top:500px; opacity:0}
-    to {top:0; opacity:1}
-  }
+}
 
 #modal-btn {
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 12px;
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 #citiestable {
-    margin-left: 150px;
-    margin-right: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 #citiesheader {
-    position: relative;
-    margin-top: 50px;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  position: relative;
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .itemstableheader {
-    position: fixed;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    font-family: Arial;
-    color: black;
-    margin-top: 0;
-    margin-bottom: 0;
-    right: 0;
-    padding: 10px;
-    background-color: #15202b;
-    transition-duration: 1s;
+  position: fixed;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #15202b;
+  transition-duration: 1s;
 }
 
 .itemstableheader td {
-    padding-top: 5px;
-    font-size: 17px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    background-color: black;
-    color: white;
-    border: 2px solid orange;
+  padding-top: 5px;
+  font-size: 17px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: black;
+  color: white;
+  border: 2px solid orange;
 }
 
 .itemstableheader p {
-    border-bottom: 2px solid orange;
-    margin-bottom: 5px;
-    background-color: darkred;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-weight: bold;
+  border-bottom: 2px solid orange;
+  margin-bottom: 5px;
+  background-color: darkred;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
 }
 
-.citiestable th, .citiestable td {
-    border: solid #2d0000 3px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 100px;
-    transition: 0.5s;
-    margin: 0;
+.citiestable th,
+.citiestable td {
+  border: solid #2d0000 3px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  transition: 0.5s;
+  margin: 0;
 }
 
 .citiestable {
-    font-size: 15px;
-    text-align: center;
-    font-family: Arial;
-    background-color: #f2f2f2;
-    color: black;
+  font-size: 15px;
+  text-align: center;
+  font-family: Arial;
+  background-color: #f2f2f2;
+  color: black;
 }
 
 .buildingstable {
-    display: block;
-    font-size: 15px;
-    text-align: center;
-    font-family: Arial;
-    margin-left: 250px;
-    margin-right: 250px;
-    color: black;
-    margin-top: 0;
-    margin-bottom: 0;
+  display: block;
+  font-size: 15px;
+  text-align: center;
+  font-family: Arial;
+  margin-left: 250px;
+  margin-right: 250px;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.buildingstable th, .buildingstable td {
-    border: solid #2d0000 3px;
-    border-radius: 10px;
-    padding: 10px;
-    width: 250px;
-    transition: 0.5s;
-    margin: 0;
-    background-color: #f2f2f2;
+.buildingstable th,
+.buildingstable td {
+  border: solid #2d0000 3px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  transition: 0.5s;
+  margin: 0;
+  background-color: #f2f2f2;
 }
 
 .buildingstable th {
-    font-weight: bold;
-    background-color: darkred;
-    color: white;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
 }
 
 #nationlink {
-    text-decoration: none;
-    color: black;
-    transition: 0.5s;
+  text-decoration: none;
+  color: black;
+  transition: 0.5s;
 }
 
 #nationlink:hover {
-    text-decoration: none;
-    color: black;
-    font-size: 22px;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
 }
-
 
 /* Tooltip text */
 .tooltip .tooltiptext {
@@ -752,134 +791,138 @@ button {
 }
 
 .rsprod {
-    font-size: 10px;
-    color: lightgreen;;
-    font-weight: bold;
+  font-size: 10px;
+  color: lightgreen;
+  font-weight: bold;
 }
 
 #marketbutton {
-    position: relative;
-    display: block;
-    background-color: darkred;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    font-size: 12px;
-    width: 40px;
+  position: relative;
+  display: block;
+  background-color: darkred;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  width: 40px;
 }
 
 @media screen and (max-width: 1000px) {
-    #headmainpage {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  #headmainpage {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .headergame {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .headergame {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .itemstableheader {
-        position:relative;
-        font-size: 15px;
-        text-align: center;
-        font-family: Arial;
-        color: black;
-        margin-top: 0;
-        margin-bottom: 0;
-        right: 0;
-        padding: 10px;
-        background-color: #15202b;
-    }
+  .itemstableheader {
+    position: relative;
+    font-size: 15px;
+    text-align: center;
+    font-family: Arial;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #15202b;
+  }
 
-    .itemstableheader td {
-        padding-top: 5px;
-        font-size: 12px;
-        padding-bottom: 5px;
-        padding-left: 5px;
-        padding-right: 5px;
-        background-color: black;
-        color: white;
-        border: 2px solid orange;
-        width: 1000px;
-    }
-    
-    .itemstableheader p {
-        border-bottom: 2px solid orange;
-        margin-bottom: 5px;
-        background-color: darkred;
-        padding-left: 5px;
-        padding-right: 5px;
-        font-weight: bold;
-    }
+  .itemstableheader td {
+    padding-top: 5px;
+    font-size: 12px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: black;
+    color: white;
+    border: 2px solid orange;
+    width: 1000px;
+  }
 
-    .signup-form {
-        position: relative;
-        display: block;
-        margin-left: 5px;
-        margin-right: 5px;
-        padding: 20px;
-        border-radius: 10px;
-        font-size: 15px;
-        margin-top: 50px;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #f2f2f2;
-        color: black;
-    }
+  .itemstableheader p {
+    border-bottom: 2px solid orange;
+    margin-bottom: 5px;
+    background-color: darkred;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+  }
 
-    .buildingstable {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .signup-form {
+    position: relative;
+    display: block;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: black;
+  }
 
-    .nationstable {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .buildingstable {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .taxrate {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .nationstable {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .navbar span {
-        position: absolute;
-        text-align: center;
-        display: block;
-        background-color: darkred;
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        margin-left: 0px;
-        font-family: Arial, Helvetica, sans-serif;
-        border: black solid 2px;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        transition: 0.5s;
-        padding: 10px;
-        text-shadow: 0 0 5px black;
-    }
+  .taxrate {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    .dailyreward {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .navbar span {
+    position: relative;
+    text-align: center;
+    display: block;
+    background-color: darkred;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: black solid 2px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition: 0.5s;
+    padding: 10px;
+    text-shadow: 0 0 5px black;
+    width: 50px;
+    margin-top: 20px;
+  }
 
-    #time-view {
-        display: none;
-    }
+  .dailyreward {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-    #happiness-view {
-        right: 2px;
-    }
+  #time-view {
+    display: none;
+  }
 
-    #rp-view {
-        display: none;
-    }
+  #happiness-view {
+    right: 2px;
+  }
+
+  #rp-view {
+    display: none;
+  }
 }

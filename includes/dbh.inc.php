@@ -1,8 +1,8 @@
 <?php
 
 $serverName = "localhost";
-$dBUsername = "u98542p92708_ppbs";
-$dBPassword = "5TK3jghym9eGzWqY";
+$dBUsername = "root";
+$dBPassword = "";
 $dBName = "u98542p92708_pp"; 
 
 // file deepcode ignore HardcodedPassword: will fix this later

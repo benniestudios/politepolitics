@@ -73,7 +73,9 @@
     }
     ?>
     <div class="navbar">
+      <center>
       <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenu"><i class="fa-solid fa-bars"></i></span>
+      </center>
     </div>
     <nav id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
