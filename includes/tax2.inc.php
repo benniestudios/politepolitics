@@ -13,28 +13,28 @@ if (!$query) {
 if(mysqli_num_rows($query) > 0){
     while($row = mysqli_fetch_assoc($query)) {
         if($row['usersTaxes' ] >= 80) {
-            $sql2 = "UPDATE users SET usersHappiness=20 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=20, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] >= 70) {
-            $sql2 = "UPDATE users SET usersHappiness=30 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=30, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] >= 60) {
-            $sql2 = "UPDATE users SET usersHappiness=40 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=40, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] >= 50) {
-            $sql2 = "UPDATE users SET usersHappiness=50 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=50, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] >= 40) {
-            $sql2 = "UPDATE users SET usersHappiness=60 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=60, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] >= 30) {
-            $sql2 = "UPDATE users SET usersHappiness=70 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=70, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] > 20) {
-            $sql2 = "UPDATE users SET usersHappiness=90 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=90, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
         elseif ($row['usersTaxes' ] <= 20) {
-            $sql2 = "UPDATE users SET usersHappiness=100 WHERE usersId='$userid'";
+            $sql2 = "UPDATE users SET usersHappiness=100, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
         }
     }
 }

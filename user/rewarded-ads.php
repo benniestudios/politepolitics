@@ -3,12 +3,14 @@
         ?>
 
 <div class="game">
-    <center><button type="button" id="playButton">Watch Video</button></center>  <!--Create a button to initiate the video loading -->
+    <!-- <center><button type="button" id="playButton">Watch Video</button></center>  Create a button to initiate the video loading -->
     <script type="text/javascript" src="https://cdn.applixir.com/applixir.sdk3.0m.js"></script>   <!-- Applixir SDK -->
     <div id="applixir_vanishing_div" hidden>
         <iframe id="applixir_parent" allow="autoplay"></iframe>
     </div>
-
+    <center>
+        <p style="color:red;">This doesn't do anything yet! It is still work in progress.</p>
+    </center>
     <script type="application/javascript">
 
         var useruid = "<?php echo $useruid; ?>"

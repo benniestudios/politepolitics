@@ -10,5 +10,5 @@ $sql = "UPDATE users SET usersTaxes=? WHERE usersId=?;";
 $stmt= $conn->prepare($sql);
 $stmt->bind_param("ss", $taxrate, $userid);
 $stmt->execute();
-header("Location: ../user/bank.php?taxset=success");
+header("Location: tax2.inc.php?taxset=success");
 
