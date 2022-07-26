@@ -7,7 +7,7 @@
 
     require_once '../includes/dbh.inc.php';
     $userid = $_SESSION["useruid"];
-    $query = mysqli_query($conn, "SELECT * FROM cities WHERE citiesUid='$userid';");
+    $query = mysqli_query($conn, "SELECT * FROM cities, users WHERE citiesUid='$userid' AND usersUid='$userid';");
 
     if (!$query)
     {
@@ -24,7 +24,7 @@
                         <table class='citiestable' id='citiestable'>
                         <tr>
                             <td><a href='capital.php'>" . $row["citiesCapital"]. "</a></td>
-                            <td>" . $row["citiesCapitalPopulation"]. "</td>
+                            <td>" . number_format($row["usersPopulation"]) . "</td>
                             <td>Capital</td>
                         </tr>
 

@@ -3,7 +3,8 @@
 ?>
     <center>
       <h1 id="headmainpage">Polite Politics is a free country simulation game!</h1>
-    </center
+    </center>
+    
 <?php
   include_once "footer.php";
 ?>
