@@ -237,9 +237,9 @@
                         </tr>
 
                         <tr>
-                            <td><img src='../images/farm.jpg' width='100%' height='150px;'><br><br>Your people need something to eat! Build some farms so your people don't starve to death.<br><br><div style='color: red;'>Produces food</div></td>
-                            <td><img src='../images/coalmine.jpg' width='100%' height='150px;'><br><br>Can be used for our coal power plants. Might not be good for the environment, but it's cheap.<br><br><div style='color: red;'>Produces coal</div></td>
-                            <td><img src='../images/ironmine.jpg' width='100%' height='150px;'><br><br>Iron can be turned into steel, which will be useful for building structures.<br><br><div style='color: red;'>Produces iron</div></td>
+                            <td><img src='../images/farm.jpg' width='100%' height='150px;'><br><br>Your people need something to eat! Build some farms so your people don't starve to death.<br><br><div style='color: green;'>Produces food</div></td>
+                            <td><img src='../images/coalmine.jpg' width='100%' height='150px;'><br><br>Can be used for our coal power plants. Might not be good for the environment, but it's cheap.<br><br><div style='color: green;'>Produces coal</div></td>
+                            <td><img src='../images/ironmine.jpg' width='100%' height='150px;'><br><br>Iron can be turned into steel, which will be useful for building structures.<br><br><div style='color: green;'>Produces iron</div></td>
                         </tr>
 
                         <tr>
@@ -409,9 +409,9 @@
                         </tr>
 
                         <tr>
-                            <td><img src='../images/oilplatform.jpg' width='100%' height='150px;'><br><br>Your people need something to eat! Build some farms so your people don't starve to death.<br><br><div style='color: red;'>Produces food</div></td>
-                            <td><img src='../images/uraniummine.jpg' width='100%' height='150px;'><br><br>Can be used for our coal power plants. Might not be good for the environment, but it's cheap.<br><br><div style='color: red;'>Produces coal</div></td>
-                            <td><img src='../images/steelfactory.jpg' width='100%' height='150px;'><br><br>Iron can be turned into steel, which will be useful for building structures.<br><br><div style='color: red;'>Produces iron</div></td>
+                            <td><img src='../images/oilplatform.jpg' width='100%' height='150px;'><br><br>Drill oil from underground. Oil is needed to use your tanks, aircraft and more!<br><br><div style='color: green;'>Produces oil</div></td>
+                            <td><img src='../images/uraniummine.jpg' width='100%' height='150px;'><br><br>Uranium is used for powering uranium powerplants.<br><br><div style='color: green;'>Produces uranium</div></td>
+                            <td><img src='../images/steelfactory.jpg' width='100%' height='150px;'><br><br>Steel is needed for the construction of many buildings.<br><br><div style='color: green;'>Produces steel</div></td>
                         </tr>
 
                         <tr>
