@@ -16,7 +16,7 @@ function startTime() {
   let s = today.getUTCSeconds();
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById('time-view').innerHTML = '⏰Time: ' + h + ':' + m + ':' + s;
+  document.getElementById('time-view').innerHTML = '&#128340Time: ' + h + ':' + m + ':' + s;
   setTimeout(startTime, 1000);
 }
 

@@ -290,7 +290,7 @@ function buildCapitalCommercial($conn, $build, $username) {
 // Countryside buildings 2
 
 function buildCapitalOil($conn, $build, $username) {
-    $sql = "UPDATE buildings, production, users SET buildingsOil=buildingsOil+1, production.productionOil=(buildings.buildingsOil)*5, users.usersMoney = users.usersMoney - 35000 * POWER(buildingsOil, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsOil < buildingsMax AND usersMoney > buildingsOilPrice";
+    $sql = "UPDATE buildings, production, users SET buildingsOil=buildingsOil+1, production.productionOil=(buildings.buildingsOil)*3, users.usersMoney = users.usersMoney - 35000 * POWER(buildingsOil, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsOil < buildingsMax AND usersMoney > buildingsOilPrice";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $username);
     $stmt->execute();
@@ -305,7 +305,7 @@ function buildCapitalOil($conn, $build, $username) {
 }
 
 function buildCapitalUranium($conn, $build, $username) {
-    $sql = "UPDATE buildings, production, users SET buildingsUraniummine=buildingsUraniummine+1, production.productionUranium=(buildings.buildingsUraniummine)*5, users.usersMoney = users.usersMoney - 48000 * POWER(buildingsUraniummine, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsUraniummine < buildingsMax AND usersMoney > buildingsUraniumminePrice";
+    $sql = "UPDATE buildings, production, users SET buildingsUraniummine=buildingsUraniummine+1, production.productionUranium=(buildings.buildingsUraniummine)*2, users.usersMoney = users.usersMoney - 48000 * POWER(buildingsUraniummine, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsUraniummine < buildingsMax AND usersMoney > buildingsUraniumminePrice";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $username);
     $stmt->execute();
@@ -320,7 +320,7 @@ function buildCapitalUranium($conn, $build, $username) {
 }
 
 function buildCapitalSteel($conn, $build, $username) {
-    $sql = "UPDATE buildings, production, users SET buildingsSteel=buildingsSteel+1, production.productionSteel=(buildings.buildingsSteel)*5, users.usersMoney = users.usersMoney - 42000 * POWER(buildingsSteel, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsSteel < buildingsMax AND usersMoney > buildingsSteelPrice";
+    $sql = "UPDATE buildings, production, users SET buildingsSteel=buildingsSteel+1, production.productionSteel=(buildings.buildingsSteel)*2.5, users.usersMoney = users.usersMoney - 42000 * POWER(buildingsSteel, 2) WHERE buildingsUser= ? AND users.usersUid = ? AND buildings.buildingsUser = production.productionUser AND buildingsSteel < buildingsMax AND usersMoney > buildingsSteelPrice";
     $stmt= $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $username);
     $stmt->execute();

@@ -21,11 +21,11 @@
             <table class='nationstable'>
                 <h1 class='headergame' id='nationsheader'>Nations</h1>
                 <tr>
-                    <th id='index-num'>📊</th>
+                    <th id='index-num'><i class='fa-solid fa-hashtag'></i></th>
                     <th>Username</th>
                     <th>Nation</th>
                     <th>Population</th>
-                    <th>Total Score</th>
+                    <th>Score</th>
                 </tr>
             </table>
         </center>";

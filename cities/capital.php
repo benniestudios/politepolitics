@@ -67,8 +67,8 @@
                         </tr>
 
                         <tr>
-                            <td>Amount: " . $row['buildingsRB'] . " </td>
-                            <td>Amount: " . $row['buildingsCB'] . " </td>
+                            <td>Amount: " . $row['buildingsRB'] . "/15 </td>
+                            <td>Amount: " . $row['buildingsCB'] . "/15 </td>
                         </tr>
 
                 ";
@@ -220,9 +220,9 @@
                         </tr>
 
                         <tr>
-                            <td>Amount: " . $row['buildingsFarm'] . " </td>
-                            <td>Amount: " . $row['buildingsCoalmine'] . " </td>
-                            <td>Amount: " . $row['buildingsIronmine'] . " </td>
+                            <td>Amount: " . $row['buildingsFarm'] . "/15 </td>
+                            <td>Amount: " . $row['buildingsCoalmine'] . "/15 </td>
+                            <td>Amount: " . $row['buildingsIronmine'] . "/15 </td>
                         </tr>
 
                 ";
@@ -392,9 +392,9 @@
                         </tr>
 
                         <tr>
-                            <td>Amount: " . $row['buildingsOil'] . " </td>
-                            <td>Amount: " . $row['buildingsUraniummine'] . " </td>
-                            <td>Amount: " . $row['buildingsSteel'] . " </td>
+                            <td>Amount: " . $row['buildingsOil'] . "/15 </td>
+                            <td>Amount: " . $row['buildingsUraniummine'] . "/15 </td>
+                            <td>Amount: " . $row['buildingsSteel'] . "/15 </td>
                         </tr>
 
                 ";

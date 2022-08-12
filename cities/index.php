@@ -15,7 +15,7 @@
     }
 
     if(mysqli_num_rows($query) > 0){
-    echo "<h1 class='headergame' id='nationsheader'>🌆 Cities 🌆</h1>";
+    echo "<h1 class='headergame' id='nationsheader'>&#127970 Cities &#127970</h1>";
 
     while($row = mysqli_fetch_assoc($query)) {
         if ($row['citiesCapital'] != 0) {
@@ -23,7 +23,7 @@
                 <center>
                         <table class='citiestable' id='citiestable'>
                         <tr>
-                            <td><a href='capital.php'>" . $row["citiesCapital"]. "</a></td>
+                            <td><a href='capital.php' id='citiescpt'>" . $row["citiesCapital"]. "</a></td>
                             <td>" . number_format($row["usersPopulation"]) . "</td>
                             <td>Capital</td>
                         </tr>

@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SFNWW28HMD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SFNWW28HMD');
+</script>
     <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9a0eba2a-9c51-4b4e-a9a3-dd791514aace" type="text/javascript" async></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,21 +47,19 @@
 
       if(mysqli_num_rows($query) > 0){
 
-
-
       while($row = mysqli_fetch_assoc($query)) {
       if ($row["usersSetup"] === '1') {
       if ($row['usersHappiness'] >= 80) {
-        $smiley = '☺️';
+        $smiley = '&#128512';
       } elseif ($row['usersHappiness'] >= 50) {
-        $smiley = '😀';
+        $smiley = '&#128528';
       } else {
-        $smiley = '😭';
+        $smiley = '&#128545';
       }
-      echo "<div class='resources-overview'><p id='money-view'><b><i class='fa-solid fa-dollar-sign'></i> Money: </b>" . number_format($row["usersMoney"]) . "<p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
-      echo "<p id='population-view'><b><i class='fa-solid fa-person'></i> Population: </b>" . number_format($row["usersPopulation"]). "<p>";
-      echo "<p id='rp-view'><b><i class='fa-solid fa-book'></i> Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
-      echo "<p id='time-view'><b>⏰Time: </b><p>";
+      echo "<div class='resources-overview'><p id='money-view'><b>&#128181 Money: </b>" . number_format($row["usersMoney"]) . "<p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
+      echo "<p id='population-view'><b>&#128106 Population: </b>" . number_format($row["usersPopulation"]). "<p>";
+      echo "<p id='rp-view'><b>&#128300 Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
+      echo "<p id='time-view'><b>&#128340 Time: </b><p>";
       echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
       
 

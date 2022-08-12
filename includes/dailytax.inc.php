@@ -7,10 +7,16 @@ $sql = "UPDATE users SET usersMoney=usersMoney+usersMoneyperhour;";
 $sqlFood = "UPDATE production, buildings SET production.productionFood=(buildings.buildingsFarm)*5 WHERE buildings.buildingsUser = production.productionUser";
 $sqlCoal = "UPDATE production, buildings SET production.productionCoal=(buildings.buildingsCoalmine)*5 WHERE buildings.buildingsUser = production.productionUser";
 $sqlIron = "UPDATE production, buildings SET production.productionIron=(buildings.buildingsIronmine)*5 WHERE buildings.buildingsUser = production.productionUser";
+$sqlFood = "UPDATE production, buildings SET production.productionOil=(buildings.buildingsOil)*3 WHERE buildings.buildingsUser = production.productionUser";
+$sqlCoal = "UPDATE production, buildings SET production.productionUranium=(buildings.buildingsUraniummine)*2 WHERE buildings.buildingsUser = production.productionUser";
+$sqlIron = "UPDATE production, buildings SET production.productionSteel=(buildings.buildingsSteel)*2.5 WHERE buildings.buildingsUser = production.productionUser";
 
 $sqlSetFood = "UPDATE production, items SET items.itemsFood=items.itemsFood + production.productionFood WHERE items.itemsUser = production.productionUser";
 $sqlSetCoal = "UPDATE production, items SET items.itemsCoal=items.itemsCoal + production.productionCoal WHERE items.itemsUser = production.productionUser";
 $sqlSetIron = "UPDATE production, items SET items.itemsIron=items.itemsIron + production.productionIron WHERE items.itemsUser = production.productionUser";
+$sqlSetOil = "UPDATE production, items SET items.itemsOil=items.itemsOil + production.productionOil WHERE items.itemsUser = production.productionUser";
+$sqlSetUranium = "UPDATE production, items SET items.itemsUranium=items.itemsUranium + production.productionUranium WHERE items.itemsUser = production.productionUser";
+$sqlSetSteel = "UPDATE production, items SET items.itemsSteel=items.itemsSteel + production.productionSteel WHERE items.itemsUser = production.productionUser";
 
 $sqlMoneyperhour = "UPDATE users, buildings SET usersMoneyfactor=buildingsCB*50, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE buildings.buildingsUser = users.usersUid";
 
@@ -57,6 +63,24 @@ if (mysqli_query($conn, $sqlSetCoal)) {
 }
 
 if (mysqli_query($conn, $sqlSetIron)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetOil)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetUranium)) {
+    echo 'worked';
+}  else {
+    echo 'not working';
+}
+
+if (mysqli_query($conn, $sqlSetSteel)) {
     echo 'worked';
 }  else {
     echo 'not working';

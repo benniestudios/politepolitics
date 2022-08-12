@@ -5,21 +5,16 @@
 <div class="game">
     <?php
 
-    require_once '../includes/dbh.inc.php';
-
     $getName = $_GET['user'];
 
-    $result = mysqli_query($conn, "SELECT * FROM cities, users WHERE citiesUid=? AND usersUid=?;");
-    $stmt= $conn->prepare($result);
-    $stmt->bind_param("ss", $getName, $getName);
-    $stmt->execute();
+    $result = mysqli_query($conn, "SELECT * FROM cities, users WHERE citiesUid='$getName' AND usersUid='$getName';");
 
+      if (!$query)
+      {
+        die('Error: ' . mysqli_error($conn));
+      }
 
-    $num_rows = mysqli_num_rows($result);
-    if ($num_rows == 0) {
-        header("Location: index.php");
-    }
-    else {
+      if(mysqli_num_rows($result) > 0){
     while($row = mysqli_fetch_assoc($result)) {
 
         if ($row['usersDaily'] == 1) {
@@ -36,6 +31,8 @@
             <tr><th>Leader name</th><td>" . $row["usersUid"]. "</td></tr>
             <tr><th>Nation</th><td>" . $row["usersNationName"]. "</td></tr>
             <tr><th>Form of government</th><td>" . $row["usersNationType"]. "</td></tr>
+            <tr><th>&#127794 Biome 1</th><td>" . $row["usersBiome"] . "</td></tr>
+            <tr><th>&#127795 Biome 2</th><td>" . $row["usersBiome2"] . "</td></tr>
             <tr><th>Research Points</th><td>" . $row["usersRP"]. "</td></tr>
             <tr><th>Taxes</th><td>" . $row["usersTaxes"]. "%</td></tr>
             <tr><th>Collected daily reward?</th><td>" . $showdaily. "</td></tr>
