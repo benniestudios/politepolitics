@@ -20,6 +20,7 @@ $sqlSetSteel = "UPDATE production, items SET items.itemsSteel=items.itemsSteel +
 
 $sqlMoneyperhour = "UPDATE users, buildings SET usersMoneyfactor=buildingsCB*50, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE buildings.buildingsUser = users.usersUid";
 
+
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
     header("location: ../user/setup.php?error=stmtfailed");
