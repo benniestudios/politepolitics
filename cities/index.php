@@ -1,4 +1,5 @@
 ﻿<?php
+        ob_start();
           include_once '../includes/header.php';
         ?>
 
@@ -32,8 +33,7 @@
                     </table>
                     <br><br><br><br><br><br><br><br><br><br>
                 </center>";
-            }
-            else {
+            } else {
 	            header('location: capitalcitysetup.php');
             }
 

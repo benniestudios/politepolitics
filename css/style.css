@@ -1,13 +1,33 @@
+@font-face {
+  font-family: coolfont;
+  src: url(font.otf) format('truetype');
+}
+
 body {
   /*background-color: #323232;*/
   background-color: #15202b;
   /*background-image: url('../images/background.png');*/
   color: white;
-  font-family: "Courier New", Courier, monospace;
+  font-family: coolfont, Courier, monospace;
+}
+
+.emoji {
+  margin: 0;
+  width: auto;
+  height: 17px;
+  vertical-align:bottom;
+}
+
+.emojilarge {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 25px;
+  vertical-align:-7px;
 }
 
 main {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
 }
 
 #citiescpt {
@@ -21,7 +41,7 @@ main {
 }
 
 .overlay {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
   height: 100%;
   width: 0;
   position: fixed;
@@ -96,7 +116,7 @@ main {
   text-decoration: none;
   padding: 10px;
   margin-left: 0px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
   border: black solid 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -120,7 +140,7 @@ main {
 
 .menulabel {
   font-size: 18px;
-  font-family: Arial;
+  font-family: coolfont;
   padding: 5px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -132,7 +152,7 @@ main {
 .signup-form-form {
   margin: 5px;
   margin-top: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
 }
 
 .error {
@@ -155,7 +175,7 @@ main {
   animation-duration: 4s;
 
   display: block;
-  font-family: Arial;
+  font-family: coolfont;
   margin: 30px;
   margin-left: 100px;
   margin-right: 100px;
@@ -190,14 +210,14 @@ header img {
 
 .gametext {
   margin-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
 }
 
 .headergame {
   display: block;
   font-size: 15px;
   text-align: left;
-  font-family: Arial;
+  font-family: coolfont;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -212,7 +232,7 @@ header img {
   display: block;
   font-size: 25px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -245,7 +265,7 @@ header img {
   border-radius: 10px;
   font-size: 15px;
   margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: coolfont, Helvetica, sans-serif;
   background-color: #f2f2f2;
   color: black;
 }
@@ -349,6 +369,10 @@ button {
   box-shadow: 0 0 2px 2px orange;
 }
 
+.resources-overview span {
+  vertical-align: bottom;
+}
+
 #moneyadd-view {
   position: absolute;
   top: 29px;
@@ -445,7 +469,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -508,7 +532,7 @@ button {
   display: table;
   font-size: 15px;
   text-align: left;
-  font-family: Arial;
+  font-family: coolfont;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -543,7 +567,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   margin-left: 240px;
   margin-right: 240px;
   background-color: #f2f2f2;
@@ -581,12 +605,6 @@ button {
   margin-bottom: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-}
-
-.emoji {
-  width: 20px;
-  height: auto;
-  vertical-align: baseline;
 }
 
 .modal {
@@ -680,7 +698,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   color: black;
   margin-top: 0;
   margin-bottom: 0;
@@ -723,7 +741,7 @@ button {
 .citiestable {
   font-size: 15px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   background-color: #f2f2f2;
   color: black;
 }
@@ -732,7 +750,7 @@ button {
   display: block;
   font-size: 15px;
   text-align: center;
-  font-family: Arial;
+  font-family: coolfont;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -823,6 +841,47 @@ button {
   width: 40px;
 }
 
+.nationstable .marketBuy {
+  background-color: darkred;
+  border: none;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border: 1px black solid;
+}
+
+.nationstable .marketBuy:hover {
+  background-color: black;
+}
+
+.markettd input[type=number] {
+  width: 50px;
+  height: 20px;
+  background-color: grey;
+  color: black;
+  border: black 2px solid;
+  border-radius: 5px;
+}
+
+.nationstable .markettd {
+  background-color: transparent;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @media screen and (max-width: 1000px) {
   #headmainpage {
     margin-left: 5px;
@@ -838,7 +897,7 @@ button {
     position: relative;
     font-size: 15px;
     text-align: center;
-    font-family: Arial;
+    font-family: coolfont;
     color: black;
     margin-top: 0;
     margin-bottom: 0;
@@ -877,7 +936,7 @@ button {
     border-radius: 10px;
     font-size: 15px;
     margin-top: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: coolfont, Helvetica, sans-serif;
     background-color: #f2f2f2;
     color: black;
   }
@@ -922,7 +981,7 @@ button {
     text-decoration: none;
     padding: 10px;
     margin-left: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: coolfont, Helvetica, sans-serif;
     border: black solid 2px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

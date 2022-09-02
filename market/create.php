@@ -43,6 +43,12 @@
             <br>
             <input id='price' type='number' name='price' min='1' max='1000000'>
             <br><br>
+            <input type='hidden' name='food' value='" . $row["itemsFood"] . "'>
+            <input type='hidden' name='coal' value='" . $row["itemsCoal"] . "'>
+            <input type='hidden' name='iron' value='" . $row["itemsIron"] . "'>
+            <input type='hidden' name='oil' value='" . $row["itemsOil"] . "'>
+            <input type='hidden' name='steel' value='" . $row["itemsSteel"] . "'>
+            <input type='hidden' name='uranium' value='" . $row["itemsUranium"] . "'>
             <button type='submit' name='sell'>Sell</button>
         </form>
     </div>

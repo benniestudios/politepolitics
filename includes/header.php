@@ -22,6 +22,8 @@
   <title>Polite Politics</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../node_modules/izitoast/dist/css/iziToast.min.css">
+  <script src="../node_modules/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
   <script src="https://kit.fontawesome.com/e6e886a038.js" crossorigin="anonymous"></script> <!-- font awasome -->
@@ -50,16 +52,74 @@
       while($row = mysqli_fetch_assoc($query)) {
       if ($row["usersSetup"] === '1') {
       if ($row['usersHappiness'] >= 80) {
-        $smiley = '&#128512';
+        $smiley = "<img src='../images/emoji/1F604.svg' class='emoji'>";
       } elseif ($row['usersHappiness'] >= 50) {
-        $smiley = '&#128528';
+        $smiley = "<img src='../images/emoji/1F610.svg' class='emoji'>";
       } else {
-        $smiley = '&#128545';
+        $smiley = "<img src='../images/emoji/1F621.svg' class='emoji'>";
+        echo "
+<script>
+iziToast.show({
+  id: null, 
+  class: '',
+  title: 'Hey!',
+  titleColor: '',
+  titleSize: '',
+  titleLineHeight: '',
+  message: 'Your population is unhappy! You should consider making some improvements.',
+  messageColor: '',
+  messageSize: '',
+  messageLineHeight: '',
+  backgroundColor: '#8b0000',
+  theme: 'dark', // dark
+  color: '#ffffff', // blue, red, green, yellow
+  icon: '',
+  iconText: '',
+  iconColor: '',
+  iconUrl: '',
+  image: '../images/emoji/1F621.svg',
+  imageWidth: 50,
+  maxWidth: null,
+  zindex: null,
+  layout: 1,
+  balloon: false,
+  close: false,
+  closeOnEscape: true,
+  closeOnClick: true,
+  displayMode: 0, // once, replace
+  position: 'topCenter', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+  target: '',
+  targetFirst: true,
+  timeout: 5000,
+  rtl: false,
+  animateInside: true,
+  drag: true,
+  pauseOnHover: true,
+  resetOnHover: false,
+  progressBar: true,
+  progressBarColor: '#000000',
+  progressBarEasing: 'linear',
+  overlay: true,
+  overlayClose: true,
+  overlayColor: 'rgba(50, 0, 0, 0.4)',
+  transitionIn: 'bounceInDown',
+  transitionOut: 'fadeOutUp',
+  transitionInMobile: 'fadeInUp',
+  transitionOutMobile: 'fadeOutDown',
+  buttons: {},
+  inputs: {},
+  onOpening: function () {},
+  onOpened: function () {},
+  onClosing: function () {},
+  onClosed: function () {}
+});
+</script>
+";
       }
-      echo "<div class='resources-overview'><p id='money-view'><b>&#128181 Money: </b>" . number_format($row["usersMoney"]) . "<p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
-      echo "<p id='population-view'><b>&#128106 Population: </b>" . number_format($row["usersPopulation"]). "<p>";
-      echo "<p id='rp-view'><b>&#128300 Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
-      echo "<p id='time-view'><b>&#128340 Time: </b><p>";
+      echo "<div class='resources-overview'><p id='money-view'><b><img src='../images/emoji/1F4B5.svg' class='emoji'/> <span>Money: " . number_format($row["usersMoney"]) . "</span></b><p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
+      echo "<p id='population-view'><b><img src='../images/emoji/1F46A.svg' class='emoji'> <span>Population: " . number_format($row["usersPopulation"]). "</span></b><p>";
+      echo "<p id='rp-view'><b><img src='../images/emoji/1F52C.svg' class='emoji'> Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
+      echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'> Time: </b><p>";
       echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
       
 

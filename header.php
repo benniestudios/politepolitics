@@ -20,6 +20,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Polite Politics is a free text-based nation simulation game. Create your own nation now!">
+  <meta name="keywords" content="polite politics, nation simulation">
   <title>Polite Politics</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset.css">

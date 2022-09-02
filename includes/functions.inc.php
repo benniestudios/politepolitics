@@ -13,7 +13,7 @@ function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
 
 function invalidUid($username) {
     $result;
-    if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+    if (!preg_match("/^[a-zA-Z0-9]{4,}$/", $username)) {
         $result = true;
     }
     else {
@@ -128,7 +128,7 @@ function loginUser($conn, $username, $pwd) {
         session_start();
         $_SESSION["userid"] =  $uidExists["usersId"];
         $_SESSION["useruid"] =  $uidExists["usersUid"];
-        header("location: ../user/index.php");
+        header("location: ../user/index.php?login=success");
         exit();
     }
 }
