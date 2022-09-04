@@ -137,6 +137,38 @@ iziToast.show({
             echo 'not working';
         }
 
+        if ($row["weatherName"] == 'Clear') {
+          $weatherImage = '../images/emoji/2600.svg';
+        } elseif ($row["weatherName"] == 'Clouds') {
+          $weatherImage = '../images/emoji/2601.svg';
+        } elseif ($row["weatherName"] == 'Rain') {
+          $weatherImage = '../images/emoji/1F327.svg';
+        } elseif ($row["weatherName"] == 'Thunderstorm') {
+          $weatherImage = '../images/emoji/26C8.svg';
+        } elseif ($row["weatherName"] == 'Drizzle') {
+          $weatherImage = '../images/emoji/1F327.svg';
+        } elseif ($row["weatherName"] == 'Snow') {
+          $weatherImage = '../images/emoji/1F328.svg';
+        } elseif ($row["weatherName"] == 'Mist') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Haze') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Dust') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Fog') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Sand') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Ash') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Squall') {
+          $weatherImage = '../images/emoji/1F32B.svg';
+        } elseif ($row["weatherName"] == 'Tornado') {
+          $weatherImage = '../images/emoji/1F32A.svg';
+        } else {
+          $weatherImage = '../images/emoji/2600.svg';
+        }
+
         echo "
 <script>
 iziToast.show({
@@ -144,49 +176,53 @@ iziToast.show({
   class: '',
   title: '" . ucwords($row["weatherDesc"]) . "',
   titleColor: '',
-  titleSize: '',
+  titleSize: '20',
   titleLineHeight: '',
   message: ' " . $row["weatherName"] . " " . $row["weatherTemp"] . "°C',
   messageColor: '',
   messageSize: '',
-  messageLineHeight: '',
-  backgroundColor: '#add8e6',
-  theme: 'light', // dark
+  messageLineHeight: '30',
+  backgroundColor: '#454545',
+  theme: 'dark', // dark
   color: '#ffffff', // blue, red, green, yellow
   icon: '',
   iconText: '',
   iconColor: '',
   iconUrl: '',
-  image: '../images/emoji/2600.svg',
-  imageWidth: 50,
+  image: '" . $weatherImage . "',
+  imageWidth: 60,
   maxWidth: null,
   zindex: null,
-  layout: 1,
+  layout: 2,
   balloon: false,
   close: false,
-  closeOnEscape: true,
+  closeOnEscape: false,
   closeOnClick: true,
   displayMode: 0, // once, replace
-  position: 'topCenter', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+  position: 'bottomRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
   target: '',
   targetFirst: true,
-  timeout: 5000,
+  timeout: false,
   rtl: false,
   animateInside: true,
   drag: true,
   pauseOnHover: true,
   resetOnHover: false,
-  progressBar: true,
+  progressBar: false,
   progressBarColor: '#000000',
   progressBarEasing: 'linear',
-  overlay: true,
+  overlay: false,
   overlayClose: true,
-  overlayColor: 'rgba(50, 0, 0, 0.4)',
+  overlayColor: 'rgba(10, 0, 50, 0.4)',
   transitionIn: 'bounceInDown',
   transitionOut: 'fadeOutUp',
   transitionInMobile: 'fadeInUp',
   transitionOutMobile: 'fadeOutDown',
-  buttons: {},
+  buttons: [
+    ['<button>Ok</button>', function (instance, toast) {
+        null
+    }, false]
+],
   inputs: {},
   onOpening: function () {},
   onOpened: function () {},
