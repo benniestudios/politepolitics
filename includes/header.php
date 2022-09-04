@@ -39,7 +39,7 @@
       require_once '../includes/dbh.inc.php';
       $userid = $_SESSION["userid"];
       $useruid = $_SESSION["useruid"];
-      $query = mysqli_query($conn, "SELECT * FROM users WHERE usersId='$userid';");
+      $query = mysqli_query($conn, "SELECT * FROM users, weather WHERE usersId='$userid';");
       $query1 = mysqli_query($conn, "SELECT * FROM items, production WHERE itemsUser='$useruid' AND productionUser='$useruid';");
 
       if (!$query)
@@ -122,6 +122,81 @@ iziToast.show({
       echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'> Time: </b><p>";
       echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
       
+      if ($row["weatherShow"] == 1) {
+        $setWeatherShow = "UPDATE weather SET weatherShow = 0;";
+
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $setWeatherShow)) {
+            header("location: ../user/setup.php?error=stmtfailed");
+            exit();
+        }
+
+        if (mysqli_query($conn, $setWeatherShow)) {
+            echo "<script>console.log('worked');</script>";
+        }  else {
+            echo 'not working';
+        }
+
+        echo "
+<script>
+iziToast.show({
+  id: null, 
+  class: '',
+  title: '" . ucwords($row["weatherDesc"]) . "',
+  titleColor: '',
+  titleSize: '',
+  titleLineHeight: '',
+  message: ' " . $row["weatherName"] . " " . $row["weatherTemp"] . "°C',
+  messageColor: '',
+  messageSize: '',
+  messageLineHeight: '',
+  backgroundColor: '#add8e6',
+  theme: 'light', // dark
+  color: '#ffffff', // blue, red, green, yellow
+  icon: '',
+  iconText: '',
+  iconColor: '',
+  iconUrl: '',
+  image: '../images/emoji/2600.svg',
+  imageWidth: 50,
+  maxWidth: null,
+  zindex: null,
+  layout: 1,
+  balloon: false,
+  close: false,
+  closeOnEscape: true,
+  closeOnClick: true,
+  displayMode: 0, // once, replace
+  position: 'topCenter', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+  target: '',
+  targetFirst: true,
+  timeout: 5000,
+  rtl: false,
+  animateInside: true,
+  drag: true,
+  pauseOnHover: true,
+  resetOnHover: false,
+  progressBar: true,
+  progressBarColor: '#000000',
+  progressBarEasing: 'linear',
+  overlay: true,
+  overlayClose: true,
+  overlayColor: 'rgba(50, 0, 0, 0.4)',
+  transitionIn: 'bounceInDown',
+  transitionOut: 'fadeOutUp',
+  transitionInMobile: 'fadeInUp',
+  transitionOutMobile: 'fadeOutDown',
+  buttons: {},
+  inputs: {},
+  onOpening: function () {},
+  onOpened: function () {},
+  onClosing: function () {},
+  onClosed: function () {}
+});
+</script>
+";
+      }
+
 
       }
       }
