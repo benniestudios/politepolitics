@@ -1,14 +1,17 @@
-@font-face {
-  font-family: coolfont;
-  src: url(font.otf) format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
 body {
   /*background-color: #323232;*/
-  background-color: #15202b;
-  /*background-image: url('../images/background.png');*/
+  /*!background-color: #15202b;*/
+  background-image: url('../images/background1.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter:drop-shadow(0 0 0.75rem black);
+  filter: drop-shadow(8px 8px 10px black);
+  filter: hue-rotate(0deg);
   color: white;
-  font-family: coolfont, Courier, monospace;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 .emoji {
@@ -27,7 +30,7 @@ body {
 }
 
 main {
-  font-family: coolfont, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 #citiescpt {
@@ -41,23 +44,25 @@ main {
 }
 
 .overlay {
-  font-family: coolfont, Helvetica, sans-serif;
-  height: 100%;
-  width: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 0;
+  width: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-image: url('../images/background1.webp');
+  background-size: 95%;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: ease all 0.7s;
 }
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 17%;
   width: 100%;
+  height: 100%;
   text-align: center;
   margin-top: 30px;
 }
@@ -69,14 +74,21 @@ main {
   color: white;
   display: block;
   transition: 0.3s;
-  background-color: darkred;
+  background-color: black;
   margin: 10px;
   border-radius: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  border: white solid 2px;
 }
 
 .overlay a:hover,
 .overlay a:focus {
   color: #f1f1f1;
+  margin-left: 380px;
+  margin-right: 380px;
+  background-color: white;
+  color: black;
 }
 
 .overlay .closebtn {
@@ -84,6 +96,9 @@ main {
   top: 20px;
   right: 15px;
   font-size: 60px;
+  margin-right: 380px;
+  z-index: 100;
+  box-shadow: none;
 }
 
 @media screen and (max-height: 450px) {
@@ -104,7 +119,7 @@ main {
   margin-top: 0px;
   padding: 8px;
   padding-left: 0;
-  background-color: #15202b;
+  background-color: transparent;
 }
 
 .navbar span {
@@ -116,7 +131,7 @@ main {
   text-decoration: none;
   padding: 10px;
   margin-left: 0px;
-  font-family: coolfont, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   border: black solid 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -140,19 +155,22 @@ main {
 
 .menulabel {
   font-size: 18px;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   padding: 5px;
   padding-top: 7px;
   padding-bottom: 7px;
   border-radius: 10px;
-  text-shadow: 0 0 5px darkred;
   font-weight: bold;
+  background-color: rgba(255, 255, 255, 1);
+  margin-left: 500px;
+  margin-right: 500px;
+  color: black;
 }
 
 .signup-form-form {
   margin: 5px;
   margin-top: 15px;
-  font-family: coolfont, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .error {
@@ -175,7 +193,7 @@ main {
   animation-duration: 4s;
 
   display: block;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 100px;
   margin-right: 100px;
@@ -210,14 +228,14 @@ header img {
 
 .gametext {
   margin-top: 20px;
-  font-family: coolfont, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .headergame {
   display: block;
   font-size: 15px;
   text-align: left;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -232,7 +250,7 @@ header img {
   display: block;
   font-size: 25px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -265,7 +283,7 @@ header img {
   border-radius: 10px;
   font-size: 15px;
   margin-top: 50px;
-  font-family: coolfont, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f2f2f2;
   color: black;
 }
@@ -359,14 +377,15 @@ button {
 
 #money-view {
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 4px;
+  left: 4px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .resources-overview span {
@@ -375,33 +394,35 @@ button {
 
 #moneyadd-view {
   position: absolute;
-  top: 29px;
-  left: 2px;
+  top: 33px;
+  left: 4px;
   background-color: lightgreen;
   color: green;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid lightgreen;
+  border-radius: 10px;
   font-weight: bold;
 }
 
 #population-view {
   position: absolute;
-  top: 56px;
-  left: 2px;
+  top: 61px;
+  left: 4px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #bm-view {
   position: absolute;
-  top: 103px;
-  left: 2px;
+  top: 105px;
+  left: 4px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
@@ -412,38 +433,37 @@ button {
 
 #rp-view {
   position: absolute;
-  top: 83px;
-  left: 2px;
+  top: 90px;
+  left: 4px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #time-view {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 4px;
+  right: 4px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #happiness-view {
   position: absolute;
-  top: 2px;
-  right: 132px;
+  top: 4px;
+  right: 134px;
   background-color: #f2f2f2;
   color: black;
   padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 #happinesswarning {
@@ -469,7 +489,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -532,7 +552,7 @@ button {
   display: table;
   font-size: 15px;
   text-align: left;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -567,7 +587,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin-left: 240px;
   margin-right: 240px;
   background-color: #f2f2f2;
@@ -698,13 +718,13 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   color: black;
   margin-top: 0;
   margin-bottom: 0;
   right: 0;
   padding: 10px;
-  background-color: #15202b;
+  background-color: transparent;
   transition-duration: 1s;
 }
 
@@ -741,7 +761,7 @@ button {
 .citiestable {
   font-size: 15px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   background-color: #f2f2f2;
   color: black;
 }
@@ -750,7 +770,7 @@ button {
   display: block;
   font-size: 15px;
   text-align: center;
-  font-family: coolfont;
+  font-family: 'Poppins', sans-serif;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -897,7 +917,7 @@ input[type=number] {
     position: relative;
     font-size: 15px;
     text-align: center;
-    font-family: coolfont;
+    font-family: 'Poppins', sans-serif;
     color: black;
     margin-top: 0;
     margin-bottom: 0;
@@ -936,7 +956,7 @@ input[type=number] {
     border-radius: 10px;
     font-size: 15px;
     margin-top: 50px;
-    font-family: coolfont, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f2f2f2;
     color: black;
   }
@@ -981,7 +1001,7 @@ input[type=number] {
     text-decoration: none;
     padding: 10px;
     margin-left: 0px;
-    font-family: coolfont, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     border: black solid 2px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1010,4 +1030,24 @@ input[type=number] {
   #rp-view {
     display: none;
   }
+
+  .overlay a {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .overlay a:hover,
+.overlay a:focus {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.menulabel {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.overlay .closebtn {
+  margin-right: 10px;
+}
 }

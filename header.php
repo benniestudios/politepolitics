@@ -37,7 +37,7 @@
         <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenu"><i class="fa-solid fa-bars"></i></span>
       </div>
     </center>
-    <nav class="overlay" id="myNav">
+    <nav class="overlay" id="myNav" loading="lazy">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <ul>
@@ -59,11 +59,11 @@
 
     <script>
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("myNav").style.height = "100%";
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("myNav").style.height = "0%";
 }
 </script>
 

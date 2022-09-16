@@ -116,14 +116,14 @@ iziToast.show({
 </script>
 ";
       }
-      echo "<div class='resources-overview'><p id='money-view'><b><img src='../images/emoji/1F4B5.svg' class='emoji'/> <span>Money: " . number_format($row["usersMoney"]) . "</span></b><p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
-      echo "<p id='population-view'><b><img src='../images/emoji/1F46A.svg' class='emoji'> <span>Population: " . number_format($row["usersPopulation"]). "</span></b><p>";
-      echo "<p id='rp-view'><b><img src='../images/emoji/1F52C.svg' class='emoji'> Research Points: </b>" . number_format($row["usersRP"]) . "<p>";
-      echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'> Time: </b><p>";
+      echo "<div class='resources-overview'><p id='money-view'><b><img src='../images/emoji/1F4B5.svg' class='emoji'/> <span>" . number_format($row["usersMoney"]) . "</span></b><p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
+      echo "<p id='population-view'><b><img src='../images/emoji/1F46A.svg' class='emoji'> <span>" . number_format($row["usersPopulation"]). "</span></b><p>";
+      echo "<p id='rp-view'><b><img src='../images/emoji/1F52C.svg' class='emoji'></b>" . number_format($row["usersRP"]) . "<p>";
+      echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'></b><p>";
       echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
       
-      if ($row["weatherShow"] == 1) {
-        $setWeatherShow = "UPDATE weather SET weatherShow = 0;";
+      if ($row["usersWeatherShow"] == 1) {
+        $setWeatherShow = "UPDATE users SET usersWeatherShow = 0 WHERE usersId='$userid';";
 
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $setWeatherShow)) {
@@ -199,7 +199,7 @@ iziToast.show({
   closeOnEscape: false,
   closeOnClick: true,
   displayMode: 0, // once, replace
-  position: 'bottomRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+  position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
   target: '',
   targetFirst: true,
   timeout: false,
@@ -256,7 +256,7 @@ iziToast.show({
       <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenu"><i class="fa-solid fa-bars"></i></span>
       </center>
     </div>
-    <nav id="myNav" class="overlay">
+    <nav id="myNav" class="overlay" loading="lazy">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <ul>
@@ -298,11 +298,11 @@ iziToast.show({
     </nav>
     <script>
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("myNav").style.height = "100%";
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("myNav").style.height = "0%";
 }
 </script>
   </header>

@@ -26,7 +26,7 @@ $description = $data->weather[0]->description;
 echo $data->main->temp;
 echo $weather;
 
-$sql = "UPDATE weather SET weatherName='$weather', weatherTemp=$temp, weatherShow=1, weatherDesc='$description';";
+$sql = "UPDATE weather, users SET weatherName='$weather', weatherTemp=$temp, weatherShow=1, weatherDesc='$description', usersWeatherShow=1;";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
