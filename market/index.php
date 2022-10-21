@@ -142,7 +142,7 @@ iziToast.show({
     
     <center>
         <table class='nationstable'>
-            <h1 class='headergame' id='bank'>Market</h1>
+            <h1 class='headergame' id='bank'>Market <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
             <tr>
                     <a id='marketbutton' href='create.php'><i class='fa-solid fa-circle-plus'></i></a>
                     <a id='marketbutton' href='view.php'><i class='fa-solid fa-warehouse'></i></a>

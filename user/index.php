@@ -8,7 +8,7 @@
     require_once '../includes/dbh.inc.php';
     $userid = $_SESSION["userid"];
     $username = $_SESSION["useruid"];
-    $query = mysqli_query($conn, "SELECT * FROM users, cities WHERE usersId='$userid' AND citiesUid='$username';");
+    $query = mysqli_query($conn, "SELECT * FROM users, cities, profileimg WHERE usersId='$userid' AND citiesUid='$username' AND userid='$userid';");
 
     if (!$query)
     {
@@ -19,12 +19,19 @@
 
     while($row = mysqli_fetch_assoc($query)) {
     if ($row["usersSetup"] === '1') {
+
+      if ($row["status"] == 0) {
+        $profileImage = "<img src='../images/uploads/profile".$userid.".".$row['ext']."?'".mt_rand()." id='userprofile'>";
+      } else {
+        $profileImage = "<img src='../images/profile.jpg' id='userprofile'>";
+      }
+
+
     echo "
     <center>
         <table class='headergame'>
-            <h1 class='headergame' id='bank'>Nation</h1>
-            <tr><th><img src='../images/emoji/E183.svg' class='emojilarge'> Leader name</th><td>" . $row["usersUid"]. "</td></tr>
-            <tr><th><img src='../images/emoji/1F30D.svg' class='emojilarge'> Nation</th><td id='nation'>" . $row["usersFlag"] . " " . $row["usersNationName"]. "</td></tr>
+            <h1 class='headergame' id='bank'>Nation <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
+            <tr id='flag'><td id='flag1'><span class='flag'>" . $row["usersFlag"] . "<span id='flagtext'> " . $row["usersNationName"] . "</span></span></td><td id='userprofile' class='userprofile'>".$profileImage."<center><span id='userprofiletext'>" . $row["usersUid"] . "</span></td></tr>
             <tr><th><img src='../images/emoji/1F4E6.svg' class='emojilarge'> Color Trade Bloc</th><td><center><div id='tradebloc' style='background-color:" . $row["usersColor"] . ";'> </div></center></td></tr>
             <tr><th><img src='../images/emoji/1F3DB.svg' class='emojilarge'> Form of government</th><td>" . $row["usersNationType"]. "</td></tr>
             <tr><th><img src='../images/emoji/1F332.svg' class='emojilarge'> Biome 1</th><td>" . $row["usersBiome"] . "</td></tr>

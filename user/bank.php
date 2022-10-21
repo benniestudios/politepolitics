@@ -26,7 +26,7 @@
     <center></center>
     <center>
     <table class='headergame'>
-        <h1 class='headergame' id='bank'>&#127974 Bank &#127974</h1>
+        <h1 class='headergame' id='bank'>Bank <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
         <tr><th>Account Name</th><td>" . $row["usersUid"]. "</td></tr>
         <tr><th>Nation</th><td>" . $row["usersNationName"]. "</td></tr>
         <tr><th>Bank Balance</th><td>$" . number_format($row["usersMoney"], 2). "</td></tr>

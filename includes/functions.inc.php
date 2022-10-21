@@ -92,6 +92,21 @@ function createUser($conn, $name, $email, $username, $pwd) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
 
+    $sqlget = "SELECT * FROM users WHERE usersUid='$username'";
+    $result = mysqli_query($conn, $sqlget);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row=mysqli_fetch_assoc($result)) {
+            $userid = $row['usersId'];
+            $sql4 = "INSERT INTO profileimg (`userid`, `status`) VALUES ($userid, 1)";
+            mysqli_query($conn, $sql4);
+            header("location: ../signup.php?error=none");
+            exit();
+        }
+    } else {
+        echo "Error: Something went wrong.";
+    }
+
     header("location: ../signup.php?error=none");
     exit();
 }

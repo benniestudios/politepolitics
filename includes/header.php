@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFNWW28HMD"></script>
 <script>
@@ -43,6 +44,7 @@
       $useruid = $_SESSION["useruid"];
       $query = mysqli_query($conn, "SELECT * FROM users, weather WHERE usersId='$userid';");
       $query1 = mysqli_query($conn, "SELECT * FROM items, production WHERE itemsUser='$useruid' AND productionUser='$useruid';");
+      $evtsquery = mysqli_query($conn, "SELECT * FROM evts WHERE evtsUser='$useruid' AND evtsViewed = 0;");
 
       if (!$query)
       {
@@ -304,16 +306,36 @@ iziToast.show({
     }
     }
     }
+
+    if (!$evtsquery)
+      {
+        die('Error: ' . mysqli_error($conn));
+      }
+
+    if(mysqli_num_rows($evtsquery) > 0){
+
+      while($row = mysqli_fetch_assoc($evtsquery)) {
+        if ($row['evtsViewed'] == '0') {
+          $color = "green";
+          $notification = "<span class='badge'>!</span>";
+          $animation = "coolanimation";
+        } else {
+          $animation = "none";
+          $color = "darkred";
+        }
+      }
+    }
     ?>
     <div class="navbar">
       <center>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenubutton"><i class="fa-solid fa-bars"></i></span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenubutton"><i class="fa-solid fa-bars"></i></span>
       </center>
     </div>
-
+    <?php echo "
     <div class='eventbutton'>
-      <a id='eventbutton' href='../user/events.php'><i class="fa-solid fa-bell"></i></a>
-    </div>
+      <a id='eventbutton' href='../user/events.php' style='background-color:" . $color . ";animation-name:" . $animation . "; animation-duration: 2s; animation-iteration-count: infinite;'><i class='fa-solid fa-bell'></i>" . $notification . "</a>
+    </div>";
+    ?>
 
     <nav id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -341,6 +363,12 @@ iziToast.show({
             echo "<li class='gamemenu' id='wars'><a href='../wars/index.php'><i class='fa-solid fa-circle-radiation'></i> Wars</a></li>";
             echo "<li class='gamemenu' id='options'><a href='../user/rewarded-ads.php'><i class='fa-solid fa-money-bill'></i> Ads</a></li>";
             echo "<li class='gamemenu' id='options'><a href='../user/setup.php'><i class='fa-solid fa-screwdriver-wrench'></i> Setup</a></li>";
+
+            echo "<br><center><li class='menulabel'>Alliance</li></center><br>";
+            echo "<li class='gamemenu' id='cities'><a href='#'><i class='fa-solid fa-users'></i> Info</a></li>";
+            echo "<li class='gamemenu' id='banklink'><a href='#'><i class='fa-solid fa-building-columns'></i> Bank</a></li>";
+            echo "<li class='gamemenu' id='daily'><a href='#'><i class='fa-solid fa-globe'></i> Alliances</a></li>";
+
             echo "<br><center><li class='menulabel'>World</li></center><br>";
             echo "<li class='gamemenu' id='nations'><a href='../user/nations.php'><i class='fa-solid fa-earth-europe'></i> Nations</a></li>";
             echo "<li class='gamemenu' id='market'><a href='../market/index.php'><i class='fa-solid fa-shop'></i> Market</a></li>";

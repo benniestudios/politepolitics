@@ -25,11 +25,13 @@
         }
 
         echo "
+
     <center>
         <table class='headergame'>
             <h1 class='headergame' id='bank'>" . $row["usersUid"]. "'s Profile</h1>
             <tr><th><img src='../images/emoji/E183.svg' class='emojilarge'> Leader name</th><td>" . $row["usersUid"]. "</td></tr>
-            <tr><th><img src='../images/emoji/1F30D.svg' class='emojilarge'> Nation</th><td>" . $row["usersNationName"]. "</td></tr>
+            <tr><th><img src='../images/emoji/1F30D.svg' class='emojilarge'> Nation</th><td>" . $row["usersFlag"] . " " . $row["usersNationName"]. "</td></tr>
+            <tr><th><img src='../images/emoji/1F4E6.svg' class='emojilarge'> Color Trade Bloc</th><td><center><div id='tradebloc' style='background-color:" . $row["usersColor"] . ";'> </div></center></td></tr>
             <tr><th><img src='../images/emoji/1F3DB.svg' class='emojilarge'> Form of government</th><td>" . $row["usersNationType"]. "</td></tr>
             <tr><th><img src='../images/emoji/1F332.svg' class='emojilarge'> Biome 1</th><td>" . $row["usersBiome"] . "</td></tr>
             <tr><th><img src='../images/emoji/1F333.svg' class='emojilarge'> Biome 2</th><td>" . $row["usersBiome2"] . "</td></tr>

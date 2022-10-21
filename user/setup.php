@@ -3,7 +3,7 @@
 ?>
 
 <center>
-    <h1 class="headergame" id="bank">Setup</h1>
+    <h1 class="headergame" id="bank">Setup <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
     <form class="signup-form" action="../includes/setup.inc.php" method="post">
         <label class="setup-form" id="setuplabel">Nation name</label>
         <br />
@@ -102,7 +102,6 @@
             </select>
         </div>
         <br />
-        <br />
         <label class="setup-form" for="flag" id="setuplabel">Flag</label>
         <div class="custom-select">
             <select id="flag" name="flag" size="1">
@@ -128,13 +127,35 @@
                 <option value="&#127463&#127463">&#127463&#127463</option>
                 <option value="&#127463&#127465">&#127463&#127465</option>
                 <option value="&#127463&#127466">&#127463&#127466</option>
-
-
             </select>
         </div>
         <br />
+        <label class="setup-form" for="flag" id="setuplabel">Choose a Biome</label>
+        <div class="custom-select">
+          <select>
+            <option><i class="fa-solid fa-tree"></i></option>
+          </select>
+        </div>
+
+        <br />
         <button type="submit" name="submit">Submit</button>
     </form>
+    <form class="signup-form" action="../includes/upload.inc.php" method="post" enctype="multipart/form-data">
+      <br />
+        <label for="file" id="setuplabel" class="setup-form">Leader Picture</label>
+        <p style='color: darkred; font-size:10px; padding:5px; border:2px darkred solid; width: 270px; margin-bottom:5px;'>[Best Ratio: w:110px/h:150px] [MAX 500kb]</p>
+        <input style="border: 2px dashed black; padding:5px;" type="file" name="file">
+        <br />
+        <button type="submit" name="submit">UPLOAD</button>
+        <?php
+          if ($_GET["upload"] === 'success') {
+            echo "<p style='color: green;'>Successfully updated your profile image.</p>";
+          }
+
+        ?>
+
+    </form>
+
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </center>
 
