@@ -12,30 +12,7 @@ if (!$query) {
 
 if(mysqli_num_rows($query) > 0){
     while($row = mysqli_fetch_assoc($query)) {
-        if($row['usersTaxes' ] >= 80) {
-            $sql2 = "UPDATE users SET usersHappiness=20, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] >= 70) {
-            $sql2 = "UPDATE users SET usersHappiness=30, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] >= 60) {
-            $sql2 = "UPDATE users SET usersHappiness=40, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] >= 50) {
-            $sql2 = "UPDATE users SET usersHappiness=50, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] >= 40) {
-            $sql2 = "UPDATE users SET usersHappiness=60, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] >= 30) {
-            $sql2 = "UPDATE users SET usersHappiness=70, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] > 20) {
-            $sql2 = "UPDATE users SET usersHappiness=90, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
-        elseif ($row['usersTaxes' ] <= 20) {
-            $sql2 = "UPDATE users SET usersHappiness=100, usersMoneyperhour = usersTaxes * 0.01 * usersPopulation / 5 + usersHappiness + usersMoneyfactor WHERE usersId='$userid'";
-        }
+        $sql2 = "UPDATE users, buildings SET usersHappiness = ((buildings.buildingsCB+1)*10-buildings.buildingsRB)/(users.usersTaxes/50)  WHERE users.usersUid = buildings.buildingsUser;";
     }
 }
 
@@ -47,6 +24,36 @@ if (!mysqli_stmt_prepare($stmt, $sql2)) {
 }
 
 if (mysqli_query($conn, $sql2)) {
+    $query1 = mysqli_query($conn, "SELECT * FROM users, buildings WHERE users.usersUid = buildings.buildingsUser;");
+
+if (!$query1) {
+    die('Error: ' . mysqli_error($conn));
+}
+
+if(mysqli_num_rows($query1) > 0){
+    while($row = mysqli_fetch_assoc($query1)) {
+
+            if ($row['usersHappiness'] < 0) {
+                $happysql4 = "UPDATE users, buildings SET usersHappiness = 0 WHERE users.usersUid = buildings.buildingsUser;";
+                $stmt= $conn->prepare($happysql4);
+                $stmt->execute();
+            }
+
+            $happiness = $row['usersHappiness'];
+            $alreadydone = 0;
+
+
+            
+            if ($happiness > 100) {
+                $username = $row['usersUid'];
+                $happysql6 = "UPDATE users, buildings SET usersHappiness = 100 WHERE users.usersUid = '$username';";
+                $stmt= $conn->prepare($happysql6);
+                $stmt->execute();
+            }
+
+
+        }
+    }
     header('location: ../user/bank.php');
     exit();
 }  else {

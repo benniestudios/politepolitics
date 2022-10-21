@@ -3,6 +3,9 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "izitoast": "^1.4.0"
+    "dynamic-marquee": "^2.3.4",
+    "izitoast": "^1.4.0",
+    "vanilla-marquee": "^1.1.2",
+    "vue-dynamic-marquee": "^0.1.7"
   }
 }

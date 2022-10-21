@@ -128,6 +128,10 @@ function loginUser($conn, $username, $pwd) {
         session_start();
         $_SESSION["userid"] =  $uidExists["usersId"];
         $_SESSION["useruid"] =  $uidExists["usersUid"];
+        $_SESSION["nation"] = $uidExists["usersNationName"];
+        $_SESSION["nationType"] = $uidExists["usersNationType"];
+        $_SESSION["color"] = $uidExists["usersColor"];
+        $_SESSION["flag"] = $uidExists["usersFlag"];
         header("location: ../user/index.php?login=success");
         exit();
     }
@@ -155,12 +159,12 @@ function emptyInputCapital($citiename) {
     return $result;
 }
 
-function setupUser($conn, $nationname, $nationtype, $userid, $color) {
+function setupUser($conn, $nationname, $nationtype, $userid, $color, $flag) {
     $numberone = 1;
-    $nationfill = "<p style='color:$color;font-weight:bold;text-shadow: 2px 2px 10px black;'>$nationname</p>";
-    $sql = "UPDATE users SET usersNationName=?, usersNationType=?, usersSetup=? WHERE usersId=?;";
+    $nationfill = "$nationname";
+    $sql = "UPDATE users SET usersNationName=?, usersNationType=?, usersSetup=?, usersFlag=?, usersColor=? WHERE usersId=?;";
     $stmt= $conn->prepare($sql);
-    $stmt->bind_param("ssii", $nationfill, $nationtype, $numberone, $userid);
+    $stmt->bind_param("ssissi", $nationfill, $nationtype, $numberone, $flag, $color ,$userid);
     $stmt->execute();
 
     header("location: ../user/index.php?error=worked");

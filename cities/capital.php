@@ -95,8 +95,8 @@
                         </tr>
 
                         <tr>
-                            <td><img src='../images/resident.jpg' width='100%' height='150px;'><br><br>Your people need a place to live! Build some homes for them. You don't want them to sleep outside.<br><br><div style='color: red;'>More citizens!</div></td>
-                            <td><img src='../images/commercial.jpg' width='100%' height='150px;'><br><br>People need to work and earn money for your nation.<br><br><div style='color: red;'>More money!</div></td>
+                            <td><img src='../images/resident.jpg' width='100%' height='150px;'><br><br>Your people need a place to live! Build some homes for them. You don't want them to sleep outside.<br><br><div style='color: red;'></div></td>
+                            <td><img src='../images/commercial.jpg' width='100%' height='150px;'><br><br>People need to work and earn money for your nation.<br><br><div style='color: orange; background-color: darkred; padding:10px;'>You will need to have enough commercial buildings to meet your population needs!</div></td>
                         </tr>
 
                         <tr>

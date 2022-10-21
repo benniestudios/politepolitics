@@ -46,7 +46,7 @@
     <form action='../includes/tax.inc.php' method='post' class='taxrate'>
         <b><label for='changetaxrate'>Change tax rate:</label></b><br>
         <input type='hidden' name='userid' value='$userid'><br>
-        <input id='slider' class='slider' type='range' name='changetaxrate' min='0' max='100' value='$standardpercentage' step='5'><br><br>
+        <input id='slider' class='slider' type='range' name='changetaxrate' min='5' max='100' value='$standardpercentage' step='5'><br><br>
         <p>Tax rate: <span id='value'></span>%</p>
         <button type='submit' name='submit'>Submit</button><br>
         <label id='happinesswarning'>⚠️ this affects your happiness when higher than 20%!</label>

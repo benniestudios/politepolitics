@@ -33,6 +33,10 @@ if (isset($_POST["user"])) {
             $stmt= $conn->prepare($sql3);
             $stmt->bind_param("s", $userSeller);
             $stmt->execute();
+
+            $sql4 = "INSERT INTO evts (evtsUser, evtsTitel, evtsMessage) VALUES('$userSeller', 'sell', '$userBuyer has bought $amount $item.');";
+            $stmt= $conn->prepare($sql4);
+            $stmt->execute();
         
             if ($quantity - $amount == 0) {
                 $sql2 = "DELETE FROM market WHERE marketUser=? AND marketItem=?;";

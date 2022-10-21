@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
 
+:root {
+  --black: black;
+  --red: darkred;
+  --white: #f2f2f2;
+  --lightgreen: lightgreen;
+}
+
 body {
   /*background-color: #323232;*/
   /*!background-color: #15202b;*/
-  background-image: url('../images/background1.webp');
-  background-repeat: no-repeat;
+  background: url('../images/background1.webp') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  filter:drop-shadow(0 0 0.75rem black);
-  filter: drop-shadow(8px 8px 10px black);
-  filter: hue-rotate(0deg);
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
@@ -30,12 +36,12 @@ body {
 }
 
 main {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
 }
 
 #citiescpt {
   text-decoration: none;
-  color: black;
+  color: var(--black);
   transition: 0.5s;
 }
 
@@ -44,51 +50,52 @@ main {
 }
 
 .overlay {
-  font-family: 'Poppins', sans-serif;
-  height: 0;
-  width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
+  border-left: none;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  height: auto;
+  width: 10%;
+  position: absolute;
   left: 0;
-  background-color: rgb(0, 0, 0);
-  background-image: url('../images/background1.webp');
-  background-size: 95%;
   overflow-x: hidden;
+  overflow-y: hidden;
   transition: ease all 0.7s;
+  background-color: var(--black);
+  opacity: 0.8;
+  border-radius: 0 10px 10px 0;
+  filter:drop-shadow(0 0 0.75rem var(--black));
 }
 
 .overlay-content {
   position: relative;
-  top: 17%;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin-top: 30px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .overlay a {
-  padding: 8px;
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 0px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 16px;
   color: white;
   display: block;
   transition: 0.3s;
-  background-color: black;
-  margin: 10px;
-  border-radius: 10px;
-  margin-left: 400px;
-  margin-right: 400px;
-  border: white solid 2px;
+  background-color: var(--black);
+  margin: 2px;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0 0px 0px 0;
+  border: darkred solid 0px;
+  border-left: none;
+  text-align: left;
 }
 
 .overlay a:hover,
 .overlay a:focus {
   color: #f1f1f1;
-  margin-left: 380px;
-  margin-right: 380px;
-  background-color: white;
-  color: black;
+  background-color: darkred;
+  color: white;
 }
 
 .overlay .closebtn {
@@ -99,18 +106,7 @@ main {
   margin-right: 380px;
   z-index: 100;
   box-shadow: none;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a,
-  .overlay div {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
+  visibility: hidden;
 }
 
 .navbar {
@@ -131,7 +127,7 @@ main {
   text-decoration: none;
   padding: 10px;
   margin-left: 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   border: black solid 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -154,23 +150,21 @@ main {
 }
 
 .menulabel {
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  padding: 5px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 0 0px 0px 0;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 1);
-  margin-left: 500px;
-  margin-right: 500px;
-  color: black;
+  background-color: darkred;
+  color: white;
 }
 
 .signup-form-form {
   margin: 5px;
   margin-top: 15px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
 }
 
 .error {
@@ -185,7 +179,7 @@ main {
 
 #headmainpage {
   position: relative;
-  font-size: 40px;
+  font-size: 30px;
   margin-top: 200px;
   font-weight: bold;
   text-shadow: 0 5px 10px yellow, 0 -5px 15px rgb(0, 110, 255);
@@ -193,10 +187,10 @@ main {
   animation-duration: 4s;
 
   display: block;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin: 30px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
   padding: 50px;
   background-color: #f2f2f2;
   color: black;
@@ -206,16 +200,16 @@ main {
 
 @keyframes headtext {
   0% {
-    font-size: 10px;
+    font-size: 1px;
   }
   40% {
-    font-size: 20px;
+    font-size: 5px;
   }
   80% {
-    font-size: 30px;
+    font-size: 10px;
   }
   100% {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -228,14 +222,14 @@ header img {
 
 .gametext {
   margin-top: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
 }
 
 .headergame {
   display: block;
   font-size: 15px;
   text-align: left;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -250,7 +244,7 @@ header img {
   display: block;
   font-size: 25px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -283,7 +277,7 @@ header img {
   border-radius: 10px;
   font-size: 15px;
   margin-top: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   background-color: #f2f2f2;
   color: black;
 }
@@ -293,24 +287,22 @@ header img {
 .signup-form input[type="number"] {
   width: 40%;
   padding: 8px 16px;
-  margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid black;
-  box-shadow: 0 0 2px 2px black;
   border-radius: 4px;
   transition: 1s ease-in-out;
-  background-color: lightgrey;
-  color: black;
+  background-color: darkred;
+  color: white;
+  margin-bottom: 2px;
 }
 
 .signup-form input[type="text"]:focus,
 .signup-form input[type="password"]:focus,
 .signup-form input[type="number"]:focus {
-  margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid red;
-  box-shadow: 0 0 10px green;
+  border: 2px solid darkred;
   border-radius: 4px;
+  outline: none;
 }
 
 .signup-form button[type="button"],
@@ -354,13 +346,13 @@ button {
   transition: 1s ease-in-out;
 }
 
-.signup-form select:hover {
-  margin: 8px 8px;
-  box-sizing: border-box;
-  border: 2px solid black;
-  box-shadow: 0 0 10px red;
-  border-radius: 4px;
+
+
+.signup-form select:focus {
+  background-color: black;
+  color: white;
 }
+
 
 .signup-form option {
   background-color: white;
@@ -368,11 +360,11 @@ button {
   padding: 8px;
   width: 100%;
   font-size: 16px;
-  text-align: center;
 }
 
-.gamemenu {
+.gamemenubutton {
   color: white;
+  visibility: hidden;
 }
 
 #money-view {
@@ -489,7 +481,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -552,7 +544,7 @@ button {
   display: table;
   font-size: 15px;
   text-align: left;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -587,7 +579,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin-left: 240px;
   margin-right: 240px;
   background-color: #f2f2f2;
@@ -714,13 +706,13 @@ button {
 }
 
 .itemstableheader {
-  position: fixed;
+  position: absolute;
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   color: black;
-  margin-top: 0;
+  margin-top: 60px;
   margin-bottom: 0;
   right: 0;
   padding: 10px;
@@ -736,7 +728,7 @@ button {
   padding-right: 5px;
   background-color: black;
   color: white;
-  border: 2px solid orange;
+  border: 2px solid black;
 }
 
 .itemstableheader p {
@@ -761,7 +753,7 @@ button {
 .citiestable {
   font-size: 15px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   background-color: #f2f2f2;
   color: black;
 }
@@ -770,7 +762,7 @@ button {
   display: block;
   font-size: 15px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -902,7 +894,232 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.scrollingtxt {
+  height: 50px;
+  position: relative;
+  background-color: darkred;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  opacity: 0.8;
+  border-radius: 10px;
+  filter:drop-shadow(0 0 0.75rem var(--black));
+}
+
+.scrollingtxt span {
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: darkred;
+  color: white;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.scrollingtxt span .weatherinfo {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.scrollingtxt img {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  vertical-align: -13px;
+}
+
+.scrollingtxt h3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+}
+
+.marquee {
+  margin: 0 auto;
+  width: 80%;
+  height: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 1s;
+}
+
+  .marquee:before,
+  .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    content: "";
+    z-index: 1;
+  }
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, black 3%, transparent 100%);
+  }
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, black 3%, transparent 100%);
+  }
+
+
+.marquee__content {
+  width: 300% !important;
+  display: flex;
+  line-height: 30px;
+  animation: marquee 45s linear infinite forwards;
+  
+}
+
+.marquee:hover {
+  animation: hoverboard 1.5s;
+}
+
+@keyframes hoverboard {
+  0% {}
+  50% {opacity:1;}
+  100% {opacity:0.8;}
+}
+
+.list-inline {
+  display: flex;
+  justify-content: space-around;
+  width: 33.33%;
+
+  /* reset list */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(40%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
+
+#eventbutton {
+  position: relative;
+  background-color: darkred;
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  margin: 10px;
+  margin-left: 0px;
+  bottom: 20px;
+  border-radius: 0 10px 10px 0;
+  transition: 0.3s;
+}
+
+#eventbutton:hover {
+  background-color: orange;
+}
+
+#tradebloc {
+  border: 2px black solid;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: "Twemoji Country Flags", Arial;
+  width: 50%;
+  border: black 2px solid;
+  border-radius: 4px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: darkred;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 2px 2px 5px black;
+}
+
+/*style items (options):*/
+.select-items {
+  position: relative;
+  background-color: darkred;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#setuplabel {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding:5px;
+  border-bottom: 2px black solid; 
+  width: 400px;
+  border-radius: 0px;
+}
+
+.hidemobile {
+  visibility: visible;
+}
+
 @media screen and (max-width: 1000px) {
+  .hidemobile {
+    visibility: hidden;
+  }
+  
   #headmainpage {
     margin-left: 5px;
     margin-right: 5px;
@@ -917,13 +1134,13 @@ input[type=number] {
     position: relative;
     font-size: 15px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
     color: black;
     margin-top: 0;
     margin-bottom: 0;
     right: 0;
     padding: 10px;
-    background-color: #15202b;
+    background-color: transparent;
   }
 
   .itemstableheader td {
@@ -956,7 +1173,7 @@ input[type=number] {
     border-radius: 10px;
     font-size: 15px;
     margin-top: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
     background-color: #f2f2f2;
     color: black;
   }
@@ -1001,7 +1218,7 @@ input[type=number] {
     text-decoration: none;
     padding: 10px;
     margin-left: 0px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
     border: black solid 2px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1031,23 +1248,92 @@ input[type=number] {
     display: none;
   }
 
+  .overlay {
+    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-image: url('../images/background1.webp');
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: visible;
+    transition: ease all 0.7s;
+    opacity: 1;
+  }
+  
+  .overlay-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 120px;
+  }
+  
   .overlay a {
+    position: relative;
+    padding: 8px;
+    padding-left: 80px;
+    padding-right: 80px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    background-color: black;
+    margin: 10px;
+    border-radius: 10px;
+    border: white solid 2px;
     margin-left: 20px;
     margin-right: 20px;
+    text-align: center;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    color: black;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 60px;
+    padding: 5px;
+    z-index: 100;
+    box-shadow: none;
+    margin-right: 10px;
+    visibility: visible;
   }
 
-  .overlay a:hover,
-.overlay a:focus {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .menulabel {
+  font-size: 18px;
+  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  padding: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
   margin-left: 100px;
   margin-right: 100px;
 }
 
-.overlay .closebtn {
-  margin-right: 10px;
+.gamemenubutton {
+  color: white;
+  visibility: visible;;
 }
+
+.marquee {
+  width: 95%;
+}
+
 }

@@ -6,6 +6,7 @@ if (isset($_POST["submit"])) {
     $nationname = $_POST["nationname"];
     $nationtype = $_POST["nationtype"];
     $color = $_POST["color"];
+    $flag = $_POST["flag"];
     $userid = $_SESSION["userid"];
 
     require_once 'dbh.inc.php';
@@ -16,7 +17,7 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    setupUser($conn, $nationname, $nationtype, $userid, $color);
+    setupUser($conn, $nationname, $nationtype, $userid, $color, $flag);
 
 }
 else {

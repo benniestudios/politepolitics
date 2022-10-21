@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFNWW28HMD"></script>
 <script>
@@ -15,7 +14,6 @@
 
   gtag('config', 'G-SFNWW28HMD');
 </script>
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9a0eba2a-9c51-4b4e-a9a3-dd791514aace" type="text/javascript" async></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +23,13 @@
   <link rel="stylesheet" href="../node_modules/izitoast/dist/css/iziToast.min.css">
   <script src="../node_modules/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script src="https://kit.fontawesome.com/e6e886a038.js" crossorigin="anonymous"></script> <!-- font awasome -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script type="module" defer>
+  import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+  polyfillCountryFlagEmojis();
+  </script>
 </head>
 <body onload="startTime()">
 
@@ -122,6 +124,152 @@ iziToast.show({
       echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'></b><p>";
       echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
       
+      if ($row["weatherName"] == 'Clear') {
+        $weatherImage = '../images/emoji/2600.svg';
+        $backgroundcolor = 'lightyellow';
+      } elseif ($row["weatherName"] == 'Clouds') {
+        $weatherImage = '../images/emoji/2601.svg';
+        $backgroundcolor = 'white';
+      } elseif ($row["weatherName"] == 'Rain') {
+        $weatherImage = '../images/emoji/1F327.svg';
+        $backgroundcolor = '#add8e6';
+      } elseif ($row["weatherName"] == 'Thunderstorm') {
+        $weatherImage = '../images/emoji/26C8.svg';
+        $backgroundcolor = 'lightgray';
+      } elseif ($row["weatherName"] == 'Drizzle') {
+        $weatherImage = '../images/emoji/1F327.svg';
+        $backgroundcolor = 'lightblue';
+      } elseif ($row["weatherName"] == 'Snow') {
+        $weatherImage = '../images/emoji/1F328.svg';
+        $backgroundcolor = 'white';
+      } elseif ($row["weatherName"] == 'Mist') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = 'lightgray';
+      } elseif ($row["weatherName"] == 'Haze') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = 'white';
+      } elseif ($row["weatherName"] == 'Dust') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = '#C2B280';
+      } elseif ($row["weatherName"] == 'Fog') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = 'white';
+      } elseif ($row["weatherName"] == 'Sand') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = '#C2B280';
+      } elseif ($row["weatherName"] == 'Ash') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = 'lightgray';
+      } elseif ($row["weatherName"] == 'Squall') {
+        $weatherImage = '../images/emoji/1F32B.svg';
+        $backgroundcolor = 'white';
+      } elseif ($row["weatherName"] == 'Tornado') {
+        $weatherImage = '../images/emoji/1F32A.svg';
+        $backgroundcolor = 'red';
+      } else {
+        $weatherImage = '../images/emoji/2600.svg';
+        $backgroundcolor = 'white';
+      }
+      
+      echo "<div class='scrollingtxt marquee'>
+              <div class='marquee__content'>
+                <h3 class='list-inline'>
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+                  <span>
+                    <img src='" . $weatherImage . "'>
+                    Weather:
+                    <span class='weatherinfo' style='background-color:" . $backgroundcolor . ";'>
+                       " . $row["weatherDesc"] . " 
+                    </span>
+                  </span>
+                  <span>
+                    <img src='../images/emoji/1F321.svg'>
+                      Temperature: 
+                      <span class='weatherinfo'>
+                        " . $row["weatherTemp"] . "°C 
+                      </span>
+                  </span>
+                </h3>
+                
+              </div>
+            </div>
+            
+            
+            ";
+    
+
       if ($row["usersWeatherShow"] == 1) {
         $setWeatherShow = "UPDATE users SET usersWeatherShow = 0 WHERE usersId='$userid';";
 
@@ -132,105 +280,11 @@ iziToast.show({
         }
 
         if (mysqli_query($conn, $setWeatherShow)) {
-            echo "<script>console.log('worked');</script>";
+            echo "<script>console.log('worked');</>";
         }  else {
             echo 'not working';
         }
 
-        if ($row["weatherName"] == 'Clear') {
-          $weatherImage = '../images/emoji/2600.svg';
-        } elseif ($row["weatherName"] == 'Clouds') {
-          $weatherImage = '../images/emoji/2601.svg';
-        } elseif ($row["weatherName"] == 'Rain') {
-          $weatherImage = '../images/emoji/1F327.svg';
-        } elseif ($row["weatherName"] == 'Thunderstorm') {
-          $weatherImage = '../images/emoji/26C8.svg';
-        } elseif ($row["weatherName"] == 'Drizzle') {
-          $weatherImage = '../images/emoji/1F327.svg';
-        } elseif ($row["weatherName"] == 'Snow') {
-          $weatherImage = '../images/emoji/1F328.svg';
-        } elseif ($row["weatherName"] == 'Mist') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Haze') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Dust') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Fog') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Sand') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Ash') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Squall') {
-          $weatherImage = '../images/emoji/1F32B.svg';
-        } elseif ($row["weatherName"] == 'Tornado') {
-          $weatherImage = '../images/emoji/1F32A.svg';
-        } else {
-          $weatherImage = '../images/emoji/2600.svg';
-        }
-
-        echo "
-<script>
-iziToast.show({
-  id: null, 
-  class: '',
-  title: '" . ucwords($row["weatherDesc"]) . "',
-  titleColor: '',
-  titleSize: '20',
-  titleLineHeight: '',
-  message: ' " . $row["weatherName"] . " " . $row["weatherTemp"] . "°C',
-  messageColor: '',
-  messageSize: '',
-  messageLineHeight: '30',
-  backgroundColor: '#454545',
-  theme: 'dark', // dark
-  color: '#ffffff', // blue, red, green, yellow
-  icon: '',
-  iconText: '',
-  iconColor: '',
-  iconUrl: '',
-  image: '" . $weatherImage . "',
-  imageWidth: 60,
-  maxWidth: null,
-  zindex: null,
-  layout: 2,
-  balloon: false,
-  close: false,
-  closeOnEscape: false,
-  closeOnClick: true,
-  displayMode: 0, // once, replace
-  position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-  target: '',
-  targetFirst: true,
-  timeout: false,
-  rtl: false,
-  animateInside: true,
-  drag: true,
-  pauseOnHover: true,
-  resetOnHover: false,
-  progressBar: false,
-  progressBarColor: '#000000',
-  progressBarEasing: 'linear',
-  overlay: false,
-  overlayClose: true,
-  overlayColor: 'rgba(10, 0, 50, 0.4)',
-  transitionIn: 'bounceInDown',
-  transitionOut: 'fadeOutUp',
-  transitionInMobile: 'fadeInUp',
-  transitionOutMobile: 'fadeOutDown',
-  buttons: [
-    ['<button>Ok</button>', function (instance, toast) {
-        null
-    }, false]
-],
-  inputs: {},
-  onOpening: function () {},
-  onOpened: function () {},
-  onClosing: function () {},
-  onClosed: function () {}
-});
-</script>
-";
       }
 
 
@@ -253,14 +307,18 @@ iziToast.show({
     ?>
     <div class="navbar">
       <center>
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenu"><i class="fa-solid fa-bars"></i></span>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenubutton"><i class="fa-solid fa-bars"></i></span>
       </center>
     </div>
-    <nav id="myNav" class="overlay" loading="lazy">
+
+    <div class='eventbutton'>
+      <a id='eventbutton' href='../user/events.php'><i class="fa-solid fa-bell"></i></a>
+    </div>
+
+    <nav id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
       <ul>
-        
         <li><a href="../index.php"><i class="fa-solid fa-house"></i> Home</a></li>
         <?php
           if (isset($_SESSION["useruid"])) {
@@ -281,7 +339,7 @@ iziToast.show({
             echo "<li class='gamemenu' id='banklink'><a href='../user/bank.php'><i class='fa-solid fa-piggy-bank'></i> Bank</a></li>";
             echo "<li class='gamemenu' id='daily'><a href='../user/daily.php'><i class='fa-solid fa-gift'></i> Daily</a></li>";
             echo "<li class='gamemenu' id='wars'><a href='../wars/index.php'><i class='fa-solid fa-circle-radiation'></i> Wars</a></li>";
-            echo "<li class='gamemenu' id='options'><a href='../user/rewarded-ads.php'><i class='fa-solid fa-money-bill'></i> Rewarded Ads</a></li>";
+            echo "<li class='gamemenu' id='options'><a href='../user/rewarded-ads.php'><i class='fa-solid fa-money-bill'></i> Ads</a></li>";
             echo "<li class='gamemenu' id='options'><a href='../user/setup.php'><i class='fa-solid fa-screwdriver-wrench'></i> Setup</a></li>";
             echo "<br><center><li class='menulabel'>World</li></center><br>";
             echo "<li class='gamemenu' id='nations'><a href='../user/nations.php'><i class='fa-solid fa-earth-europe'></i> Nations</a></li>";
@@ -294,15 +352,20 @@ iziToast.show({
           }
         ?>
       </ul>
-        </div>
+        </div>  
     </nav>
     <script>
 function openNav() {
-  document.getElementById("myNav").style.height = "100%";
+  if (window.innerWidth < 1000) {
+    document.getElementById("myNav").style.height = "100%";
+  }
+  
 }
 
 function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
+  if (window.innerWidth < 1000) {
+    document.getElementById("myNav").style.height = "0%";
+}
 }
 </script>
   </header>

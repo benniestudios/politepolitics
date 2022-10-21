@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+   <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/90fb8e93fcb62a19a5f9bc7a/script.js"></script> <!-- End cookieyes banner --> 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFNWW28HMD"></script>
 <script>
@@ -16,7 +16,7 @@
   gtag('config', 'G-SFNWW28HMD');
 </script>
 
-    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="9a0eba2a-9c51-4b4e-a9a3-dd791514aace" type="text/javascript" async></script>
+    
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
     <center><a href="index.php" id="logo"><img src="images/logo/3.png"></a></center>
     <center>
       <div class="navbar">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenu"><i class="fa-solid fa-bars"></i></span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="gamemenubutton"><i class="fa-solid fa-bars"></i></span>
       </div>
     </center>
     <nav class="overlay" id="myNav" loading="lazy">

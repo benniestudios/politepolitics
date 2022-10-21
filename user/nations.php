@@ -24,7 +24,7 @@
                     <th id='index-num'><i class='fa-solid fa-hashtag'></i></th>
                     <th>Username</th>
                     <th>Nation</th>
-                    <th>Population</th>
+                    <th class='hidemobile'>Population</th>
                     <th>Score</th>
                 </tr>
             </table>
@@ -38,8 +38,8 @@
         <tr>
             <td id='index-num'>" . $index_num . "</td>
             <td><a id='nationlink' href='" . 'https://politepolitics.benniestudios.com/'.$row['usersUid'] . "'>" . $row["usersUid"]. "</a></td>
-            <td>" . $row["usersNationName"]. "</td>
-            <td>" . $row["usersPopulation"]. "</td>
+            <td>" . $row["usersFlag"] . " " . $row["usersNationName"] . "</td>
+            <td class='hidemobile'>" . $row["usersPopulation"]. "</td>
             <td>" . number_format($row["usersTotalscore"]). "</td>
         </tr>
 

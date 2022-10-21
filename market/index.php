@@ -24,8 +24,8 @@ iziToast.show({
   messageColor: '',
   messageSize: '',
   messageLineHeight: '',
-  backgroundColor: '#006400',
-  theme: 'dark', // dark
+  backgroundColor: '#90EE90',
+  theme: 'light', // dark
   color: '#ffffff', // blue, red, green, yellow
   icon: '',
   iconText: '',
