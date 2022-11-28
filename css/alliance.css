@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+
+.animated-grid {
+  font-family: "Twemoji Country Flags", "Poppins", sans-serif;
+  height: 100%;
+  width: 75%;
+  display: grid;
+  gap: 1rem;
+  padding-bottom: 100px;
+  overflow: hidden;
+
+  grid-template-areas:
+    "a  b   b   c"
+    "h  ⭐  ⭐  d"
+    "g  ⭐  ⭐  e";
+
+  grid-template-rows: 130px 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  --stagger-delay: 100ms;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: blur(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+.card {
+  background-color: #f2f2f2;
+  color: black;
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
+  border-radius: 4px;
+  box-shadow: 8px 8px 5px black;
+  transition: 0.8s;
+}
+
+.card:last-child:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card:nth-child(1) {
+  grid-area: a;
+  animation-delay: calc(1 * var(--stagger-delay));
+  background-color: transparent;
+  color: white;
+  list-style-type: none;
+}
+
+.card li a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background-color: darkred;
+  margin-top: 15px;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+.card li a:hover {
+  background-color: black;
+}
+
+.card:nth-child(2) {
+  grid-area: b;
+  animation-delay: calc(2 * var(--stagger-delay));
+  background-color: darkred;
+  color: white;
+}
+.card:nth-child(3) {
+  grid-area: c;
+  animation-delay: calc(3 * var(--stagger-delay));
+  background-color: darkred;
+  color: white;
+  font-size: 20px;
+}
+.card:nth-child(4) {
+  grid-area: d;
+  animation-delay: calc(4 * var(--stagger-delay));
+  background-color: rgba(30, 30, 30, 0.7);
+  color: white;
+}
+.card:nth-child(5) {
+  grid-area: e;
+  animation-delay: calc(5 * var(--stagger-delay));
+}
+.card:nth-child(6) {
+  grid-area: g;
+  animation-delay: calc(6 * var(--stagger-delay));
+  font-size: 14px;
+  background-color: rgba(30, 30, 30, 0.7);
+}
+.card:nth-child(7) {
+  grid-area: h;
+  animation-delay: calc(7 * var(--stagger-delay));
+  background-color: white;
+  color: white;
+}
+.card:last-child {
+  grid-area: ⭐;
+  animation-delay: calc(8 * var(--stagger-delay));
+  
+}
+
+.alliance-table {
+  display: inline-table;
+  margin-top: 30px;
+  border-radius: 10px;
+  width: 95%;
+}
+
+.alliance-table th:empty, .alliance-table td:empty {
+  visibility: hidden;
+  border: 0;
+}
+
+.alliance-table th {
+  background-color: darkred;
+  border: black solid 2px;
+  color: white;
+  padding: 10px;
+}
+
+.alliance-table td {
+  border: 2px black solid;
+  border-collapse:separate;
+  padding: 10px;
+  background-color: lightyellow;
+}
+
+.vertical-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+}
+
+.main-alliance {
+  margin-top: 20px;
+}
+
+.alliance-name {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+#allianceflag img {
+  width: 100%;
+}
+
+#description {
+  font-weight: bold;
+}
+
+.description-text {
+  font-size: 14px;
+  background-color: white;
+  color: black;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  height: 85%;
+}
+
+#taxrates {
+  padding: 10px;
+  background-color: rgba(30, 30, 30, 0.7);
+  color: white;
+}
+
+#taxrates p {
+  border-bottom: 2px orange solid;
+  border-radius: 4px;
+  background-color: darkred;
+  font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+  .animated-grid {
+    width: 95%;
+  }
+}

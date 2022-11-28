@@ -16,7 +16,7 @@ function startTime() {
   let s = today.getUTCSeconds();
   m = checkTime(m);
   s = checkTime(s);
-  document.getElementById('time-view').innerHTML = "<img src='../images/emoji/1F551.svg' class='emoji'> Time: " + h + ':' + m + ':' + s;
+  document.getElementById('time-view').innerHTML = "<img src='../images/emoji/1F551.svg' class='emoji'> " + h + ':' + m + ':' + s;
   setTimeout(startTime, 1000);
 }
 

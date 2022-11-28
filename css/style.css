@@ -6,18 +6,22 @@
   --red: darkred;
   --white: #f2f2f2;
   --lightgreen: lightgreen;
+  --defaultfont: 'Fredoka One', cursive;
+  --toprssbg: darkred;
+  --toprsscolor: rgba(255, 255, 255, 1);
 }
 
 body {
   /*background-color: #323232;*/
   /*!background-color: #15202b;*/
+  
   background: url('../images/background1.webp') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   color: white;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   overflow-x: hidden;
   
 }
@@ -38,7 +42,8 @@ body {
 }
 
 main {
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
+  overflow-x: hidden;
 }
 
 #citiescpt {
@@ -56,7 +61,7 @@ main {
 
 .overlay {
   border-left: none;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   height: auto;
   width: 10%;
   position: absolute;
@@ -132,7 +137,7 @@ main {
   text-decoration: none;
   padding: 10px;
   margin-left: 0px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   border: black solid 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -156,7 +161,7 @@ main {
 
 .menulabel {
   font-size: 14px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   padding: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -169,7 +174,7 @@ main {
 .signup-form-form {
   margin: 5px;
   margin-top: 15px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
 }
 
 .error {
@@ -192,7 +197,7 @@ main {
   animation-duration: 4s;
 
   display: block;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin: 30px;
   margin-left: 200px;
   margin-right: 200px;
@@ -220,21 +225,22 @@ main {
 
 #logo,
 header img {
-  margin-top: 10px;
+  margin-top: 50px;
   margin-bottom: 50px;
-  width: 30%;
+  width: 350px;
+  filter:drop-shadow(0 0 0.5rem black)
 }
 
 .gametext {
   margin-top: 20px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
 }
 
 .headergame {
   display: block;
   font-size: 15px;
   text-align: left;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -268,7 +274,7 @@ header img {
   display: block;
   font-size: 25px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -301,7 +307,7 @@ header img {
   border-radius: 10px;
   font-size: 15px;
   margin-top: 50px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   background-color: #f2f2f2;
   color: black;
 }
@@ -393,24 +399,27 @@ button {
 
 #money-view {
   position: absolute;
-  top: 4px;
+  top: 0px;
   left: 4px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
+  width: 160px;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 4px;
   padding-left: 12px;
   padding-right: 12px;
-  border: 1px solid white;
   border-radius: 10px;
+  font-family: var(--defaultfont);
+  z-index: 11;
 }
 
 .resources-overview span {
   vertical-align: bottom;
+  user-select: none;
 }
 
 #moneyadd-view {
   position: absolute;
-  top: 33px;
+  top: 30px;
   left: 4px;
   background-color: lightgreen;
   color: green;
@@ -420,66 +429,151 @@ button {
   border: 1px solid lightgreen;
   border-radius: 10px;
   font-weight: bold;
+  font-size: 12px;
+  font-family: var(--defaultfont);
+  transition: 0.5s;
+  opacity:0;
+  visibility: hidden;
+  user-select: none;
+}
+
+#money-view:hover ~ #moneyadd-view {
+  visibility: visible;
+  opacity:1;
+  animation: moneyaddhover 0.5s ease-in-out;
 }
 
 #population-view {
   position: absolute;
-  top: 61px;
-  left: 4px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
+  top: 0px;
+  left: 160px;
+  width: 130px;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 4px;
   padding-left: 12px;
   padding-right: 12px;
-  border: 1px solid white;
   border-radius: 10px;
+  font-family: var(--defaultfont);
+  z-index: 11;
 }
 
-#bm-view {
+#populationmax-view {
   position: absolute;
-  top: 105px;
-  left: 4px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
-  border: 1px solid orange;
-  border-radius: 4px;
-  box-shadow: 0 0 2px 2px orange;
+  top: 30px;
+  left: 160px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: var(--defaultfont);
+  transition: 0.5s;
+  opacity:0;
+  visibility: hidden;
+  user-select: none;
+  z-index: 10;
+}
+
+#population-view:hover ~ #populationmax-view {
+  visibility: visible;
+  opacity:1;
+  animation: moneyaddhover 0.5s ease-in-out;
 }
 
 #rp-view {
   position: absolute;
-  top: 90px;
-  left: 4px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
+  top: 0px;
+  left: 320px;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 4px;
   padding-left: 12px;
   padding-right: 12px;
-  border: 1px solid white;
   border-radius: 10px;
+  font-family: var(--defaultfont);
+  z-index: 11;
+  user-select: none;
+}
+
+#rpinfo-view {
+  position: absolute;
+  top: 30px;
+  left: 250px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: var(--defaultfont);
+  transition: 0.5s;
+  opacity:0;
+  visibility: hidden;
+  user-select: none;
+  z-index: 0;
+}
+
+#rp-view:hover ~ #rpinfo-view {
+  visibility: visible;
+  opacity:1;
+  animation: moneyaddhover 0.5s ease-in-out;
 }
 
 #time-view {
   position: absolute;
-  top: 4px;
+  top: 0px;
   right: 4px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
-  border: 1px solid white;
+  width: 90px;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 4px;
   border-radius: 10px;
+  font-family: var(--defaultfont);
+  z-index: 10;
 }
 
 #happiness-view {
   position: absolute;
-  top: 4px;
-  right: 134px;
-  background-color: #f2f2f2;
-  color: black;
-  padding: 3px;
-  border: 1px solid white;
+  top: 0px;
+  right: 115px;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 4px;
   border-radius: 10px;
+  font-family: var(--defaultfont);
+  user-select: none;
+  z-index: 10;
+}
+
+#topbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 5px;
+  border-radius: 0;
+  font-family: var(--defaultfont);
+  user-select: none;
+  z-index: 1;
+}
+
+@keyframes moneyaddhover {
+  from {
+    top: 0;
+  }
+  to {
+    top: 30;
+  }
 }
 
 #happinesswarning {
@@ -505,7 +599,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin: 30px;
   margin-left: 250px;
   margin-right: 250px;
@@ -566,9 +660,9 @@ button {
 
 .nationstable {
   display: table;
-  font-size: 15px;
+  font-size: 14px;
   text-align: left;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -603,7 +697,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin-left: 240px;
   margin-right: 240px;
   background-color: #f2f2f2;
@@ -734,7 +828,7 @@ button {
   display: block;
   font-size: 20px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   color: black;
   margin-top: 60px;
   margin-bottom: 0;
@@ -762,6 +856,8 @@ button {
   padding-left: 5px;
   padding-right: 5px;
   font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .citiestable th,
@@ -777,7 +873,7 @@ button {
 .citiestable {
   font-size: 15px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   background-color: #f2f2f2;
   color: black;
 }
@@ -786,7 +882,7 @@ button {
   display: block;
   font-size: 15px;
   text-align: center;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   margin-left: 250px;
   margin-right: 250px;
   color: black;
@@ -922,8 +1018,8 @@ input[type=number] {
   height: 50px;
   position: relative;
   background-color: darkred;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
-  opacity: 0.8;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
+  opacity: 1;
   border-radius: 10px;
   filter:drop-shadow(0 0 0.75rem var(--black));
 }
@@ -972,7 +1068,7 @@ input[type=number] {
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
   transition: 1s;
 }
@@ -1135,10 +1231,6 @@ input[type=number] {
   border-radius: 0px;
 }
 
-.hidemobile {
-  visibility: visible;
-}
-
 .flag {
   font-size: 100px;
   vertical-align: middle;
@@ -1224,9 +1316,6 @@ input[type=number] {
 }
 
 @media screen and (max-width: 1000px) {
-  .hidemobile {
-    visibility: hidden;
-  }
   
   #headmainpage {
     margin-left: 5px;
@@ -1242,7 +1331,7 @@ input[type=number] {
     position: relative;
     font-size: 15px;
     text-align: center;
-    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
     color: black;
     margin-top: 0;
     margin-bottom: 0;
@@ -1271,6 +1360,7 @@ input[type=number] {
     padding-right: 5px;
     font-weight: bold;
   }
+  
 
   .signup-form {
     position: relative;
@@ -1281,7 +1371,7 @@ input[type=number] {
     border-radius: 10px;
     font-size: 15px;
     margin-top: 50px;
-    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
     background-color: #f2f2f2;
     color: black;
   }
@@ -1326,7 +1416,7 @@ input[type=number] {
     text-decoration: none;
     padding: 10px;
     margin-left: 0px;
-    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
     border: black solid 2px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1357,7 +1447,7 @@ input[type=number] {
   }
 
   .overlay {
-    font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+    font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
     height: 0%;
     width: 100%;
     position: fixed;
@@ -1423,7 +1513,7 @@ input[type=number] {
 
 .menulabel {
   font-size: 18px;
-  font-family: "Twemoji Country Flags", 'Poppins', sans-serif;
+  font-family: "Twemoji Country Flags", 'Fredoka One', cursive;
   padding: 5px;
   padding-top: 7px;
   padding-bottom: 7px;
@@ -1442,6 +1532,20 @@ input[type=number] {
 
 .marquee {
   width: 95%;
+}
+
+#topbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 97%;
+  background-color: var(--toprssbg);
+  color: var(--toprsscolor);
+  padding: 5px;
+  border-radius: 0;
+  font-family: var(--defaultfont);
+  user-select: none;
+  z-index: 1;
 }
 
 }

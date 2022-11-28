@@ -3,7 +3,7 @@
 ?>
 
 <center>
-    <h1 class="headergame" id="bank">Setup <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
+    <h1 class="headergame" id="bank">Setup <span class='badge'><img src='../images/emoji/1F6E0.svg' class='emojihalloween'></span></h1> <!-- TODO: Emoji Update -->
     <form class="signup-form" action="../includes/setup.inc.php" method="post">
         <label class="setup-form" id="setuplabel">Nation name</label>
         <br />
@@ -130,11 +130,18 @@
             </select>
         </div>
         <br />
-        <label class="setup-form" for="flag" id="setuplabel">Choose a Biome</label>
-        <div class="custom-select">
-          <select>
-            <option><i class="fa-solid fa-tree"></i></option>
+        <label class="setup-form" for="flag" id="setuplabel">Biomes</label>
+        <div class="custom-select" style="background-color: darkred;">
+          <select onchange="renderImage(this.value)" id="selectOption">
+            <option value="0">Choose a Biome...</option>
+            <option value="grassland">Grassland</option>
+            <option value="mountain">Mountains</option>
+            <option value="desert">Desert</option>
+            <option value="mountain">Tundra</option>
+            <option value="mountain">Taiga</option>
+
           </select>
+          <img id="myImg" src="../images/biomes/grassland.png" width="100%" height="300">
         </div>
 
         <br />
@@ -143,7 +150,7 @@
     <form class="signup-form" action="../includes/upload.inc.php" method="post" enctype="multipart/form-data">
       <br />
         <label for="file" id="setuplabel" class="setup-form">Leader Picture</label>
-        <p style='color: darkred; font-size:10px; padding:5px; border:2px darkred solid; width: 270px; margin-bottom:5px;'>[Best Ratio: w:110px/h:150px] [MAX 500kb]</p>
+        <p style='color: darkred; font-size:10px; padding:5px; border:2px darkred solid; width: 270px; margin-bottom:5px;'>[Best Ratio: w:110px/h:110px] [MAX 500kb]</p>
         <input style="border: 2px dashed black; padding:5px;" type="file" name="file">
         <br />
         <button type="submit" name="submit">UPLOAD</button>
@@ -160,6 +167,7 @@
 </center>
 
 <script>
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
@@ -313,6 +321,24 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+function renderImage(){
+var selected = document.getElementById("selectOption");
+//console.log(selected);
+alert(selected.value);
+var imgUrl = "";
+if(selected.value == 0){
+imgUrl = "https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
+} else if(selected.value == 1){
+imgUrl ="https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80";
+}else{
+imgUrl = "";
+}
+
+document.getElementById("myImg").src = imgUrl;
+
+}
+
 </script>
 
 <?php

@@ -19,7 +19,7 @@
         echo "
         <center>
             <table class='nationstable'>
-                <h1 class='headergame' id='nationsheader'>Nations <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->
+                <h1 class='headergame' id='nationsheader'>Nations <span class='badge'><img src='../images/emoji/1F30D.svg' class='emojihalloween'></span></h1> <!-- TODO: Emoji Update -->
                 <tr>
                     <th id='index-num'><i class='fa-solid fa-hashtag'></i></th>
                     <th>Username</th>

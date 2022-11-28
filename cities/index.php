@@ -16,7 +16,7 @@
     }
 
     if(mysqli_num_rows($query) > 0){
-    echo "<h1 class='headergame' id='nationsheader'>Cities <span class='badge'><img src='../images/emoji/1F383.svg' class='emojihalloween'></span></h1> <!-- TODO: Halloween Update -->";
+    echo "<h1 class='headergame' id='nationsheader'>Cities <span class='badge'><img src='../images/emoji/1F3D9.svg' class='emojihalloween'></span></h1> <!-- TODO: Emoji Update -->";
 
     while($row = mysqli_fetch_assoc($query)) {
         if ($row['citiesCapital'] != 0) {

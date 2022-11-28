@@ -1,0 +1,117 @@
+.research {
+    background-image: url("../images/nuclearresearch.png");
+    background-size: cover;
+    background-position: center;
+    border: black solid 2px;
+    width: 70%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.385), 
+    inset 0px 0px 20px 0px rgba(0, 0, 0, 0.385), 
+    inset 0px 0px 20px 0px rgba(0, 0, 0, 0.385), 
+    inset 0px 0px 20px 0px rgba(0, 0, 0, 0.385);
+}
+
+.research-circle {
+    position: relative;
+    width: 30px;
+    border: black solid 2px;
+    border-radius: 20%;
+    padding: 10px;
+    margin: 5px;
+    background-color: lightyellow;
+    transition: 0.2s;
+}
+
+.research-circle:hover {
+    transform: scale(0.9);
+    filter: brightness(80%);
+}
+
+
+/* Food related */
+#r1, #r2, #r5 {
+    background-color: #ffb4b4;
+}
+
+/* Biome related */
+#r3, #r6 {
+    background-color: rgb(188, 251, 188);
+}
+
+/* Weather related */
+#r4 {
+    background-color: rgb(178, 223, 251);
+}
+
+#r2, #r3 {
+    display: inline flow-root;
+}
+
+
+#r4, #r5, #r6 {
+    display: inline flow-root;
+}
+
+#rmil1 {
+    position: absolute;
+    background-color: rgba(165, 42, 42, 1);
+    border-radius: 100%;
+}
+#rmil2 {
+    position: absolute;
+    margin-top: 65px;
+    background-color: rgba(165, 42, 42, 1);
+    border-radius: 100%;
+}
+#rmil3 {
+    position: absolute;
+    margin-top: 125px;
+    background-color: rgba(165, 42, 42, 1);
+    border-radius: 100%;
+}
+
+#tr1, #tr2, #tr3, #tr4, #tr5, #tr6, #trmil1, #trmil2, #trmil3 {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    visibility: hidden;
+}
+
+.research-circle:hover > #tr1 {
+    visibility: visible;
+}
+.research-circle:hover > #tr2 {
+    visibility: visible;
+}
+.research-circle:hover > #tr3 {
+    visibility: visible;
+}
+.research-circle:hover > #tr4 {
+    visibility: visible;
+}
+.research-circle:hover > #tr5 {
+    visibility: visible;
+}
+.research-circle:hover > #tr6 {
+    visibility: visible;
+}
+.research-circle:hover > #trmil1 {
+    visibility: visible;
+}
+.research-circle:hover > #trmil2 {
+    visibility: visible;
+}
+.research-circle:hover > #trmil3 {
+    visibility: visible;
+}
+
+#research-toptxt {
+    padding: 10px;
+    background-color: lightyellow;
+    text-align: left;
+    border: black solid 2px;
+}

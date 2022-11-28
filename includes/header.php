@@ -120,11 +120,12 @@ iziToast.show({
 </script>
 ";
       }
-      echo "<div class='resources-overview'><p id='money-view'><b><img src='../images/emoji/1F4B5.svg' class='emoji'/> <span>" . number_format($row["usersMoney"]) . "</span></b><p id='moneyadd-view'> + $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
-      echo "<p id='population-view'><b><img src='../images/emoji/1F46A.svg' class='emoji'> <span>" . number_format($row["usersPopulation"]). "</span></b><p>";
-      echo "<p id='rp-view'><b><img src='../images/emoji/1F52C.svg' class='emoji'></b>" . number_format($row["usersRP"]) . "<p>";
+      echo "<div class='resources-overview'><p id='money-view'><b><img src='../images/emoji/1F4B5.svg' class='emoji'/> <span>$" . number_format($row["usersMoney"]) . " <i class='fa-solid fa-caret-down'></i></span></b><p id='moneyadd-view'> $" . number_format($row["usersMoneyperhour"], 2) . " money/h</p></p>";
+      echo "<p id='population-view'><b><img src='../images/emoji/1F46A.svg' class='emoji'> <span>" . number_format($row["usersPopulation"]). " <i class='fa-solid fa-caret-down'></i></span></b><p id='populationmax-view'> Max: " . number_format($row["usersPopulation"], 0) . "</p><p>";
+      echo "<p id='rp-view'><b><img src='../images/emoji/1F52C.svg' class='emoji'></b>" . number_format($row["usersRP"]) . " <i class='fa-solid fa-caret-down'></i><p id='rpinfo-view'>Used for researching new technologies</p><p>";
       echo "<p id='time-view'><b><img src='../images/emoji/1F551.svg' class='emoji'></b><p>";
-      echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p></div>";
+      echo "<p id='happiness-view'>" . $smiley . " " . $row["usersHappiness"] . "%<p>";
+      echo "<p id='topbar'>a<p></div>";
       
       if ($row["weatherName"] == 'Clear') {
         $weatherImage = '../images/emoji/2600.svg';
@@ -297,6 +298,7 @@ iziToast.show({
     echo "
         <table class='itemstableheader'>
           <tr><td><p>Food</p>" . number_format($row["itemsFood"]) . "<br><div class='rsprod'>+" . number_format($row['productionFood']) . "/h</div></td></tr>
+          <tr><td><p>Wood</p>" . number_format($row["itemsFood"]) . "<br><div class='rsprod'>+" . number_format($row['productionFood']) . "/h</div></td></tr>
           <tr><td><p>Coal</p>" . number_format($row["itemsCoal"]) . "<br><div class='rsprod'>+" . number_format($row['productionCoal']) . "/h</div></td></tr>
           <tr><td><p>Iron</p>" . number_format($row["itemsIron"]) . "<br><div class='rsprod'>+" . number_format($row['productionIron']) . "/h</div></td></tr>
           <tr><td><p>Oil</p>" . number_format($row["itemsOil"]) . "<br><div class='rsprod'>+" . number_format($row['productionOil']) . "/h</div></td></tr>
@@ -324,6 +326,10 @@ iziToast.show({
           $color = "darkred";
         }
       }
+    } else {
+      $animation = "none";
+      $color = "darkred";
+      $notification = "";
     }
     ?>
     <div class="navbar">
@@ -365,7 +371,7 @@ iziToast.show({
             echo "<li class='gamemenu' id='options'><a href='../user/setup.php'><i class='fa-solid fa-screwdriver-wrench'></i> Setup</a></li>";
 
             echo "<br><center><li class='menulabel'>Alliance</li></center><br>";
-            echo "<li class='gamemenu' id='cities'><a href='#'><i class='fa-solid fa-users'></i> Info</a></li>";
+            echo "<li class='gamemenu' id='cities'><a href='../alliance/index.php'><i class='fa-solid fa-users'></i> Info</a></li>";
             echo "<li class='gamemenu' id='banklink'><a href='#'><i class='fa-solid fa-building-columns'></i> Bank</a></li>";
             echo "<li class='gamemenu' id='daily'><a href='#'><i class='fa-solid fa-globe'></i> Alliances</a></li>";
 
